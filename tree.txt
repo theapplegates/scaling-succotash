@@ -1,0 +1,154 @@
+.
+├── CONTRIBUTING.md
+├── Cargo.lock
+├── Cargo.toml
+├── LICENSE.txt
+├── README.android
+├── README.md
+├── autocrypt
+│   ├── Cargo.toml
+│   ├── LICENSE.txt -> ../LICENSE.txt
+│   ├── README.md
+│   ├── src
+│   │   ├── cert.rs
+│   │   └── lib.rs
+│   └── tests
+│       └── data
+├── buffered-reader
+│   ├── Cargo.toml
+│   ├── LICENSE.txt -> ../LICENSE.txt
+│   ├── NEWS
+│   ├── README.md
+│   └── src
+│       ├── adapter.rs
+│       ├── buffered-reader-test.txt
+│       ├── decompress_bzip2.rs
+│       ├── decompress_deflate.rs
+│       ├── dup.rs
+│       ├── eof.rs
+│       ├── file_error.rs
+│       ├── file_generic.rs
+│       ├── file_unix.rs
+│       ├── generic.rs
+│       ├── lib.rs
+│       ├── limitor.rs
+│       ├── macros.rs
+│       ├── memory.rs
+│       └── reserve.rs
+├── clippy.toml
+├── doc
+│   ├── CLA.txt
+│   ├── highlight.js
+│   │   └── 9.12.0
+│   ├── msrv.md
+│   ├── release-checklist.md
+│   └── security-vulnerabilities.md
+├── ipc
+│   ├── Cargo.toml
+│   ├── LICENSE.txt -> ../LICENSE.txt
+│   ├── README.md
+│   ├── build.rs
+│   ├── examples
+│   │   └── ipc-standalone
+│   ├── src
+│   │   ├── core.rs
+│   │   ├── keybox.rs
+│   │   ├── keygrip.rs
+│   │   ├── lib.rs
+│   │   ├── macros.rs
+│   │   ├── sexp
+│   │   ├── sexp.rs
+│   │   └── tests.rs
+│   └── tests
+│       └── data
+├── net
+│   ├── Cargo.toml
+│   ├── LICENSE.txt -> ../LICENSE.txt
+│   ├── README.md
+│   ├── examples
+│   │   ├── dane-generate.rs
+│   │   ├── dane-get.rs
+│   │   ├── hkp-get.rs
+│   │   └── tor-hkp-get.rs
+│   ├── src
+│   │   ├── dane.rs
+│   │   ├── email.rs
+│   │   ├── lib.rs
+│   │   ├── macros.rs
+│   │   ├── updates.rs
+│   │   └── wkd.rs
+│   └── tests
+│       └── hkp.rs
+├── openpgp
+│   ├── Cargo.toml
+│   ├── LICENSE.txt -> ../LICENSE.txt
+│   ├── NEWS
+│   ├── README.md
+│   ├── benches
+│   │   ├── README.md
+│   │   ├── common
+│   │   ├── decrypt_message.rs
+│   │   ├── decrypt_verify_message.rs
+│   │   ├── encrypt_message.rs
+│   │   ├── encrypt_sign_message.rs
+│   │   ├── generate_cert.rs
+│   │   ├── merge_cert.rs
+│   │   ├── mod.rs
+│   │   ├── parse_cert.rs
+│   │   ├── run_benchmarks.rs
+│   │   ├── sign_message.rs
+│   │   └── verify_message.rs
+│   ├── build.rs
+│   ├── examples
+│   │   ├── decrypt-with.rs
+│   │   ├── encrypt-for.rs
+│   │   ├── generate-encrypt-decrypt.rs
+│   │   ├── generate-group-key.rs
+│   │   ├── generate-sign-verify.rs
+│   │   ├── notarize.rs
+│   │   ├── pad.rs
+│   │   ├── reply-encrypted.rs
+│   │   ├── sign-detached.rs
+│   │   ├── sign.rs
+│   │   ├── statistics.rs
+│   │   ├── supported-algorithms.rs
+│   │   ├── web-of-trust.rs
+│   │   └── wrap-literal.rs
+│   ├── fuzz
+│   │   ├── Cargo.toml
+│   │   └── fuzz_targets
+│   ├── src
+│   │   ├── armor
+│   │   ├── armor.rs
+│   │   ├── cert
+│   │   ├── cert.rs
+│   │   ├── crypto
+│   │   ├── fingerprint.rs
+│   │   ├── fmt.rs
+│   │   ├── keyhandle.rs
+│   │   ├── keyid.rs
+│   │   ├── lib.rs
+│   │   ├── macros.rs
+│   │   ├── message
+│   │   ├── packet
+│   │   ├── packet_pile.rs
+│   │   ├── parse
+│   │   ├── parse.rs
+│   │   ├── policy
+│   │   ├── policy.rs
+│   │   ├── regex
+│   │   ├── seal.rs
+│   │   ├── serialize
+│   │   ├── serialize.rs
+│   │   ├── tests.rs
+│   │   ├── types
+│   │   └── utils.rs
+│   └── tests
+│       ├── data
+│       ├── for-each-artifact.rs
+│       ├── secret-leak-detector
+│       └── secret-leak-detector.rs
+├── openpgp-policy.toml
+└── tree.txt
+
+41 directories, 111 files

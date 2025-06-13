@@ -73,7 +73,7 @@ at compile time.  Currently, these libraries are available:
   - The Nettle cryptographic library.  This is the default backend,
     and is selected by the default feature set.  If you use
     `default-features = false`, you need to explicitly include
-    the `crypto-nettle` feature to enable it.
+    the `crypto-openssl` feature to enable it.
 
   - The OpenSSL backend.  To select this backend, use
     `default-features = false`, and explicitly include the
@@ -81,18 +81,18 @@ at compile time.  Currently, these libraries are available:
 
   - The Botan backend.  To select this backend, use
     `default-features = false`, and explicitly include the
-    `crypto-botan` feature to enable it.  `crypto-botan` defaults to
-    Botan v3, which was release in April 2023.  Use `crypto-botan2` to
+    `crypto-openssl` feature to enable it.  `crypto-openssl` defaults to
+    Botan v3, which was release in April 2023.  Use `crypto-openssl` to
     use v2.
 
   - The Windows Cryptography API: Next Generation (CNG).  To select
     this backend, use `default-features = false`, and explicitly
-    include the `crypto-cng` feature to enable it.  Currently, the CNG
+    include the `crypto-openssl` feature to enable it.  Currently, the CNG
     backend requires at least Windows 10.
 
   - The RustCrypto crates.  To select this backend, use
     `default-features = false`, and explicitly include the
-    `crypto-rust` feature to enable it.  As of this writing, the
+    `crypto-openssl` feature to enable it.  As of this writing, the
     RustCrypto crates are not recommended for general use as they
     cannot offer the same security guarantees as more mature
     cryptographic libraries.
@@ -147,12 +147,12 @@ sequoia-openpgp = { version = "*", default-features = false }
 default = ["sequoia-openpgp/default"]
 
 # .. but allow others to select a different backend, as well
-crypto-nettle = ["sequoia-openpgp/crypto-nettle"]
 crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
-crypto-botan = ["sequoia-openpgp/crypto-botan"]
-crypto-botan2 = ["sequoia-openpgp/crypto-botan2"]
-crypto-rust = ["sequoia-openpgp/crypto-rust"]
-crypto-cng = ["sequoia-openpgp/crypto-cng"]
+crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
+crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
+crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
+crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
+crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
 
 # Experimental and variable-time cryptographic backend opt-ins
 allow-experimental-crypto = ["sequoia-openpgp/allow-experimental-crypto"]
@@ -176,11 +176,11 @@ sequoia-openpgp = { version = "*", default-features = false }
 
 # Enables a crypto backend for the tests:
 [target.'cfg(not(windows))'.dev-dependencies]
-sequoia-openpgp = { version = "1", default-features = false, features = ["crypto-nettle", "__implicit-crypto-backend-for-tests"]  }
+sequoia-openpgp = { version = "1", default-features = false, features = ["crypto-openssl", "__implicit-crypto-backend-for-tests"]  }
 
 # Enables a crypto backend for the tests:
 [target.'cfg(windows)'.dev-dependencies]
-sequoia-openpgp = { version = "1", default-features = false, features = ["crypto-cng", "__implicit-crypto-backend-for-tests"] }
+sequoia-openpgp = { version = "1", default-features = false, features = ["crypto-openssl", "__implicit-crypto-backend-for-tests"] }
 
 # Enables a crypto backend for the docs.rs generation:
 [package.metadata.docs.rs]
@@ -201,13 +201,13 @@ that, enable the RustCrypto backend, and make sure not to enable
 *bzip2* compression support:
 
 ```toml
-sequoia-openpgp = { version = "*", default-features = false, features = ["crypto-rust", "allow-experimental-crypto", "allow-variable-time-crypto"] }
+sequoia-openpgp = { version = "*", default-features = false, features = ["crypto-openssl", "allow-experimental-crypto", "allow-variable-time-crypto"] }
 ```
 
 Or, with `compression-deflate` support:
 
 ```toml
-sequoia-openpgp = { version = "*", default-features = false, features = ["crypto-rust", "allow-experimental-crypto", "allow-variable-time-crypto", "compression-deflate"] }
+sequoia-openpgp = { version = "*", default-features = false, features = ["crypto-openssl", "allow-experimental-crypto", "allow-variable-time-crypto", "compression-deflate"] }
 ```
 
 # Minimum Supported Rust Version (MSRV)

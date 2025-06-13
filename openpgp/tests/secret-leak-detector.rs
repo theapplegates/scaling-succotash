@@ -207,8 +207,8 @@ mod leak_tests {
     make_test!(test_encrypted);
     make_test!(test_password);
     make_test!(test_ed25519);
-    #[cfg(not(feature = "crypto-rust"))]
+    #[cfg(not(feature = "crypto-openssl"))]
     make_test!(test_aes_256_encryption);
-    #[cfg(not(feature = "crypto-rust"))]
+    #[cfg(not(feature = "crypto-openssl"))]
     make_test!(test_aes_256_decryption);
 }

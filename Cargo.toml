@@ -6,6 +6,7 @@ members = [
     "ipc",
     "net",
     "openpgp",
+    "sequoia-sq",
 ]
 
 [profile.release]
@@ -81,3 +82,6 @@ opt-level = 2
 [patch.crates-io]
 openssl = { git = "https://github.com/teythoon/rust-openssl", branch = "justus/pqc" }
 openssl-sys = { git = "https://github.com/teythoon/rust-openssl", branch = "justus/pqc" }
+sequoia-openpgp = { path = "openpgp", version = "2", default-features = false, features = ["crypto-openssl"] }
+buffered-reader = { path = "../loveit/buffered-reader" }
+

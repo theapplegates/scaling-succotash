@@ -12,28 +12,28 @@ pub(crate) mod sha1cd;
 //
 // Note: If you add a new crypto backend, add it to the expression,
 // and also synchronize the expression to `build.rs`.
-#[cfg(all(feature = "crypto-nettle",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
                   any(feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
                       feature = "crypto-fuzzing",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl")))))]
 mod nettle;
-#[cfg(all(feature = "crypto-nettle",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
                   any(feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
                       feature = "crypto-fuzzing",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl")))))]
 pub use self::nettle::*;
-#[cfg(all(feature = "crypto-nettle",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
                   any(feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl")))))]
 pub use self::nettle::Backend;
 
 // Nettle is the default backend, but on Windows targets we instead
@@ -44,39 +44,39 @@ pub use self::nettle::Backend;
 //
 // Note: If you add a new crypto backend, add it to the expression,
 // and also synchronize the expression to `build.rs`.
-#[cfg(all(feature = "crypto-cng",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
-                  any(feature = "crypto-nettle",
+                  any(feature = "crypto-openssl",
                       feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
                       feature = "crypto-fuzzing",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl")))))]
 mod cng;
-#[cfg(all(feature = "crypto-cng",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
-                  any(feature = "crypto-nettle",
+                  any(feature = "crypto-openssl",
                       feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
                       feature = "crypto-fuzzing",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl")))))]
 pub use self::cng::*;
-#[cfg(all(feature = "crypto-cng",
+#[cfg(all(feature = "crypto-openssl",
           not(all(feature = "__implicit-crypto-backend-for-tests",
-                  any(feature = "crypto-nettle",
+                  any(feature = "crypto-openssl",
                       feature = "crypto-openssl",
-                      feature = "crypto-botan",
-                      feature = "crypto-botan2",
+                      feature = "crypto-openssl",
+                      feature = "crypto-openssl",
                       feature = "crypto-fuzzing",
-                      feature = "crypto-rust")))))]
+                      feature = "crypto-openssl")))))]
 pub use self::cng::Backend;
 
-#[cfg(feature = "crypto-rust")]
+#[cfg(feature = "crypto-openssl")]
 mod rust;
-#[cfg(feature = "crypto-rust")]
+#[cfg(feature = "crypto-openssl")]
 pub use self::rust::*;
-#[cfg(feature = "crypto-rust")]
+#[cfg(feature = "crypto-openssl")]
 pub use self::rust::Backend;
 
 #[cfg(feature = "crypto-openssl")]
@@ -86,11 +86,11 @@ pub use self::openssl::*;
 #[cfg(feature = "crypto-openssl")]
 pub use self::openssl::Backend;
 
-#[cfg(any(feature = "crypto-botan", feature = "crypto-botan2"))]
+#[cfg(any(feature = "crypto-openssl", feature = "crypto-openssl"))]
 mod botan;
-#[cfg(any(feature = "crypto-botan", feature = "crypto-botan2"))]
+#[cfg(any(feature = "crypto-openssl", feature = "crypto-openssl"))]
 pub use self::botan::*;
-#[cfg(feature = "crypto-botan")]
+#[cfg(feature = "crypto-openssl")]
 pub use self::botan::Backend;
 
 #[cfg(feature = "crypto-fuzzing")]

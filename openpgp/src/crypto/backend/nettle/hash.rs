@@ -78,7 +78,7 @@ impl HashAlgorithm {
     }
 }
 
-#[cfg(all(test, feature = "crypto-nettle"))]
+#[cfg(all(test, feature = "crypto-openssl"))]
 mod tests {
     use super::*;
     use nettle::rsa;

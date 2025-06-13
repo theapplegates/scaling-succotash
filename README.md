@@ -137,10 +137,10 @@ time of writing, it also supports the native Windows [Cryptographic
 API: Next Generation (CNG)].
 
 Various backends can be enabled via Cargo features,
-e.g. `crypto-nettle` or `crypto-cng` and exactly one can be enabled at
+e.g. `crypto-openssl` or `crypto-openssl` and exactly one can be enabled at
 a time.
 
-Currently, the `crypto-nettle` feature is enabled by default -
+Currently, the `crypto-openssl` feature is enabled by default -
 regardless of the operating system used. If you choose to enable a
 different backend, please make sure to disable the default first.
 
@@ -284,10 +284,10 @@ needed.
 [Visual Studio Build Tools]: https://visualstudio.microsoft.com/downloads?q=build+tools
 
 When building, make sure to disable default features (to disable
-Nettle) and enable the CNG via `crypto-cng` Cargo feature:
+Nettle) and enable the CNG via `crypto-openssl` Cargo feature:
 
 ```bash
-$ cargo build --no-default-features --features crypto-cng,compression # Only change crypto backend
+$ cargo build --no-default-features --features crypto-openssl,compression # Only change crypto backend
 ```
 
 #### Nettle

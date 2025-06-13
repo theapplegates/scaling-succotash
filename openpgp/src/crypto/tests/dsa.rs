@@ -24,7 +24,7 @@ fn fips_186_3() -> Result<()> {
             return Ok(());
         }
 
-        if cfg!(feature = "crypto-cng") && q.len() == 28 {
+        if cfg!(feature = "crypto-openssl") && q.len() == 28 {
             eprintln!("Skipping DSA key with N = 224 because \
                        CNG doesn't support this.");
             return Ok(());
