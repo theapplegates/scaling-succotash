@@ -1,154 +1,2431 @@
-.
-├── CONTRIBUTING.md
-├── Cargo.lock
-├── Cargo.toml
-├── LICENSE.txt
-├── README.android
-├── README.md
-├── autocrypt
-│   ├── Cargo.toml
-│   ├── LICENSE.txt -> ../LICENSE.txt
-│   ├── README.md
-│   ├── src
-│   │   ├── cert.rs
-│   │   └── lib.rs
-│   └── tests
-│       └── data
-├── buffered-reader
-│   ├── Cargo.toml
-│   ├── LICENSE.txt -> ../LICENSE.txt
-│   ├── NEWS
-│   ├── README.md
-│   └── src
-│       ├── adapter.rs
-│       ├── buffered-reader-test.txt
-│       ├── decompress_bzip2.rs
-│       ├── decompress_deflate.rs
-│       ├── dup.rs
-│       ├── eof.rs
-│       ├── file_error.rs
-│       ├── file_generic.rs
-│       ├── file_unix.rs
-│       ├── generic.rs
-│       ├── lib.rs
-│       ├── limitor.rs
-│       ├── macros.rs
-│       ├── memory.rs
-│       └── reserve.rs
-├── clippy.toml
-├── doc
-│   ├── CLA.txt
-│   ├── highlight.js
-│   │   └── 9.12.0
-│   ├── msrv.md
-│   ├── release-checklist.md
-│   └── security-vulnerabilities.md
-├── ipc
-│   ├── Cargo.toml
-│   ├── LICENSE.txt -> ../LICENSE.txt
-│   ├── README.md
-│   ├── build.rs
-│   ├── examples
-│   │   └── ipc-standalone
-│   ├── src
-│   │   ├── core.rs
-│   │   ├── keybox.rs
-│   │   ├── keygrip.rs
-│   │   ├── lib.rs
-│   │   ├── macros.rs
-│   │   ├── sexp
-│   │   ├── sexp.rs
-│   │   └── tests.rs
-│   └── tests
-│       └── data
-├── net
-│   ├── Cargo.toml
-│   ├── LICENSE.txt -> ../LICENSE.txt
-│   ├── README.md
-│   ├── examples
-│   │   ├── dane-generate.rs
-│   │   ├── dane-get.rs
-│   │   ├── hkp-get.rs
-│   │   └── tor-hkp-get.rs
-│   ├── src
-│   │   ├── dane.rs
-│   │   ├── email.rs
-│   │   ├── lib.rs
-│   │   ├── macros.rs
-│   │   ├── updates.rs
-│   │   └── wkd.rs
-│   └── tests
-│       └── hkp.rs
-├── openpgp
-│   ├── Cargo.toml
-│   ├── LICENSE.txt -> ../LICENSE.txt
-│   ├── NEWS
-│   ├── README.md
-│   ├── benches
-│   │   ├── README.md
-│   │   ├── common
-│   │   ├── decrypt_message.rs
-│   │   ├── decrypt_verify_message.rs
-│   │   ├── encrypt_message.rs
-│   │   ├── encrypt_sign_message.rs
-│   │   ├── generate_cert.rs
-│   │   ├── merge_cert.rs
-│   │   ├── mod.rs
-│   │   ├── parse_cert.rs
-│   │   ├── run_benchmarks.rs
-│   │   ├── sign_message.rs
-│   │   └── verify_message.rs
-│   ├── build.rs
-│   ├── examples
-│   │   ├── decrypt-with.rs
-│   │   ├── encrypt-for.rs
-│   │   ├── generate-encrypt-decrypt.rs
-│   │   ├── generate-group-key.rs
-│   │   ├── generate-sign-verify.rs
-│   │   ├── notarize.rs
-│   │   ├── pad.rs
-│   │   ├── reply-encrypted.rs
-│   │   ├── sign-detached.rs
-│   │   ├── sign.rs
-│   │   ├── statistics.rs
-│   │   ├── supported-algorithms.rs
-│   │   ├── web-of-trust.rs
-│   │   └── wrap-literal.rs
-│   ├── fuzz
-│   │   ├── Cargo.toml
-│   │   └── fuzz_targets
-│   ├── src
-│   │   ├── armor
-│   │   ├── armor.rs
-│   │   ├── cert
-│   │   ├── cert.rs
-│   │   ├── crypto
-│   │   ├── fingerprint.rs
-│   │   ├── fmt.rs
-│   │   ├── keyhandle.rs
-│   │   ├── keyid.rs
-│   │   ├── lib.rs
-│   │   ├── macros.rs
-│   │   ├── message
-│   │   ├── packet
-│   │   ├── packet_pile.rs
-│   │   ├── parse
-│   │   ├── parse.rs
-│   │   ├── policy
-│   │   ├── policy.rs
-│   │   ├── regex
-│   │   ├── seal.rs
-│   │   ├── serialize
-│   │   ├── serialize.rs
-│   │   ├── tests.rs
-│   │   ├── types
-│   │   └── utils.rs
-│   └── tests
-│       ├── data
-│       ├── for-each-artifact.rs
-│       ├── secret-leak-detector
-│       └── secret-leak-detector.rs
-├── openpgp-policy.toml
-└── tree.txt
+buffered-reader v1.4.0 (/Users/thor3/Documents/loveit/buffered-reader)
+├── bzip2 feature "default"
+│   └── bzip2 v0.5.2
+│       └── bzip2-sys feature "default"
+│           └── bzip2-sys v0.1.13+1.0.8
+│               [build-dependencies]
+│               ├── cc feature "default"
+│               │   └── cc v1.2.27
+│               │       └── shlex feature "default"
+│               │           ├── shlex v1.3.0
+│               │           └── shlex feature "std"
+│               │               └── shlex v1.3.0
+│               └── pkg-config feature "default"
+│                   └── pkg-config v0.3.32
+├── flate2 feature "default"
+│   ├── flate2 v1.1.2
+│   │   ├── crc32fast feature "default"
+│   │   │   ├── crc32fast v1.4.2
+│   │   │   │   └── cfg-if feature "default"
+│   │   │   │       └── cfg-if v1.0.1
+│   │   │   └── crc32fast feature "std"
+│   │   │       └── crc32fast v1.4.2 (*)
+│   │   └── miniz_oxide feature "with-alloc"
+│   │       └── miniz_oxide v0.8.9
+│   │           └── adler2 v2.0.1
+│   └── flate2 feature "rust_backend"
+│       ├── flate2 v1.1.2 (*)
+│       ├── flate2 feature "any_impl"
+│       │   └── flate2 v1.1.2 (*)
+│       └── flate2 feature "miniz_oxide"
+│           └── flate2 v1.1.2 (*)
+└── libc feature "default"
+    ├── libc v0.2.173
+    └── libc feature "std"
+        └── libc v0.2.173
 
-41 directories, 111 files
+sequoia-autocrypt v0.26.0 (/Users/thor3/Documents/loveit/autocrypt)
+├── base64 feature "default"
+│   ├── base64 v0.22.1
+│   └── base64 feature "std"
+│       ├── base64 v0.22.1
+│       └── base64 feature "alloc"
+│           └── base64 v0.22.1
+└── sequoia-openpgp feature "crypto-openssl"
+    └── sequoia-openpgp v2.0.0 (/Users/thor3/Documents/loveit/openpgp)
+        ├── buffered-reader v1.4.0 (/Users/thor3/Documents/loveit/buffered-reader) (*)
+        ├── memsec v0.7.0
+        ├── libc feature "default" (*)
+        ├── base64 feature "default" (*)
+        ├── anyhow feature "default"
+        │   ├── anyhow v1.0.98
+        │   └── anyhow feature "std"
+        │       └── anyhow v1.0.98
+        ├── argon2 feature "default"
+        │   ├── argon2 v0.5.3
+        │   │   ├── blake2 v0.10.6
+        │   │   │   ├── digest feature "default"
+        │   │   │   │   ├── digest v0.10.7
+        │   │   │   │   │   ├── subtle v2.6.1
+        │   │   │   │   │   ├── block-buffer feature "default"
+        │   │   │   │   │   │   └── block-buffer v0.10.4
+        │   │   │   │   │   │       └── generic-array feature "default"
+        │   │   │   │   │   │           └── generic-array v0.14.7
+        │   │   │   │   │   │               └── typenum feature "default"
+        │   │   │   │   │   │                   └── typenum v1.18.0
+        │   │   │   │   │   │               [build-dependencies]
+        │   │   │   │   │   │               └── version_check feature "default"
+        │   │   │   │   │   │                   └── version_check v0.9.5
+        │   │   │   │   │   └── crypto-common feature "default"
+        │   │   │   │   │       └── crypto-common v0.1.6
+        │   │   │   │   │           ├── generic-array feature "default" (*)
+        │   │   │   │   │           ├── generic-array feature "more_lengths"
+        │   │   │   │   │           │   └── generic-array v0.14.7 (*)
+        │   │   │   │   │           └── typenum feature "default" (*)
+        │   │   │   │   └── digest feature "core-api"
+        │   │   │   │       ├── digest v0.10.7 (*)
+        │   │   │   │       └── digest feature "block-buffer"
+        │   │   │   │           └── digest v0.10.7 (*)
+        │   │   │   └── digest feature "mac"
+        │   │   │       ├── digest v0.10.7 (*)
+        │   │   │       └── digest feature "subtle"
+        │   │   │           └── digest v0.10.7 (*)
+        │   │   ├── base64ct feature "default"
+        │   │   │   └── base64ct v1.8.0
+        │   │   └── password-hash feature "default"
+        │   │       ├── password-hash v0.5.0
+        │   │       │   ├── rand_core v0.6.4
+        │   │       │   │   └── getrandom feature "default"
+        │   │       │   │       └── getrandom v0.2.16
+        │   │       │   │           ├── libc v0.2.173
+        │   │       │   │           └── cfg-if feature "default" (*)
+        │   │       │   ├── subtle v2.6.1
+        │   │       │   └── base64ct feature "default" (*)
+        │   │       └── password-hash feature "rand_core"
+        │   │           └── password-hash v0.5.0 (*)
+        │   ├── argon2 feature "alloc"
+        │   │   ├── argon2 v0.5.3 (*)
+        │   │   ├── argon2 feature "password-hash"
+        │   │   │   └── argon2 v0.5.3 (*)
+        │   │   └── password-hash feature "alloc"
+        │   │       ├── password-hash v0.5.0 (*)
+        │   │       └── base64ct feature "alloc"
+        │   │           └── base64ct v1.8.0
+        │   ├── argon2 feature "password-hash" (*)
+        │   └── argon2 feature "rand"
+        │       ├── argon2 v0.5.3 (*)
+        │       ├── argon2 feature "password-hash" (*)
+        │       └── password-hash feature "rand_core" (*)
+        ├── regex feature "default"
+        │   ├── regex v1.11.1
+        │   │   ├── aho-corasick v1.1.3
+        │   │   │   └── memchr v2.7.5
+        │   │   ├── memchr v2.7.5
+        │   │   ├── regex-syntax v0.8.5
+        │   │   ├── regex-automata feature "alloc"
+        │   │   │   └── regex-automata v0.4.9
+        │   │   │       ├── aho-corasick v1.1.3 (*)
+        │   │   │       ├── memchr v2.7.5
+        │   │   │       └── regex-syntax v0.8.5
+        │   │   ├── regex-automata feature "meta"
+        │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   ├── regex-automata feature "nfa-pikevm"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-automata feature "nfa-thompson"
+        │   │   │   │       ├── regex-automata v0.4.9 (*)
+        │   │   │   │       └── regex-automata feature "alloc" (*)
+        │   │   │   └── regex-automata feature "syntax"
+        │   │   │       ├── regex-automata v0.4.9 (*)
+        │   │   │       └── regex-automata feature "alloc" (*)
+        │   │   ├── regex-automata feature "nfa-pikevm" (*)
+        │   │   └── regex-automata feature "syntax" (*)
+        │   ├── regex feature "perf"
+        │   │   ├── regex v1.11.1 (*)
+        │   │   ├── regex feature "perf-backtrack"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   └── regex-automata feature "nfa-backtrack"
+        │   │   │       ├── regex-automata v0.4.9 (*)
+        │   │   │       └── regex-automata feature "nfa-thompson" (*)
+        │   │   ├── regex feature "perf-cache"
+        │   │   │   └── regex v1.11.1 (*)
+        │   │   ├── regex feature "perf-dfa"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   └── regex-automata feature "hybrid"
+        │   │   │       ├── regex-automata v0.4.9 (*)
+        │   │   │       ├── regex-automata feature "alloc" (*)
+        │   │   │       └── regex-automata feature "nfa-thompson" (*)
+        │   │   ├── regex feature "perf-inline"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   └── regex-automata feature "perf-inline"
+        │   │   │       └── regex-automata v0.4.9 (*)
+        │   │   ├── regex feature "perf-literal"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   └── regex-automata feature "perf-literal"
+        │   │   │       ├── regex-automata v0.4.9 (*)
+        │   │   │       ├── regex-automata feature "perf-literal-multisubstring"
+        │   │   │       │   ├── regex-automata v0.4.9 (*)
+        │   │   │       │   └── regex-automata feature "std"
+        │   │   │       │       ├── regex-automata v0.4.9 (*)
+        │   │   │       │       ├── aho-corasick feature "std"
+        │   │   │       │       │   ├── aho-corasick v1.1.3 (*)
+        │   │   │       │       │   └── memchr feature "std"
+        │   │   │       │       │       ├── memchr v2.7.5
+        │   │   │       │       │       └── memchr feature "alloc"
+        │   │   │       │       │           └── memchr v2.7.5
+        │   │   │       │       ├── memchr feature "std" (*)
+        │   │   │       │       ├── regex-automata feature "alloc" (*)
+        │   │   │       │       └── regex-syntax feature "std"
+        │   │   │       │           └── regex-syntax v0.8.5
+        │   │   │       └── regex-automata feature "perf-literal-substring"
+        │   │   │           ├── regex-automata v0.4.9 (*)
+        │   │   │           └── aho-corasick feature "perf-literal"
+        │   │   │               └── aho-corasick v1.1.3 (*)
+        │   │   └── regex feature "perf-onepass"
+        │   │       ├── regex v1.11.1 (*)
+        │   │       └── regex-automata feature "dfa-onepass"
+        │   │           ├── regex-automata v0.4.9 (*)
+        │   │           └── regex-automata feature "nfa-thompson" (*)
+        │   ├── regex feature "std"
+        │   │   ├── regex v1.11.1 (*)
+        │   │   ├── aho-corasick feature "std" (*)
+        │   │   ├── memchr feature "std" (*)
+        │   │   ├── regex-automata feature "std" (*)
+        │   │   └── regex-syntax feature "std" (*)
+        │   ├── regex feature "unicode"
+        │   │   ├── regex v1.11.1 (*)
+        │   │   ├── regex feature "unicode-age"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-age"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-age"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-age" (*)
+        │   │   ├── regex feature "unicode-bool"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-bool"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-bool"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-bool" (*)
+        │   │   ├── regex feature "unicode-case"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-case"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-case"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-case" (*)
+        │   │   ├── regex feature "unicode-gencat"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-gencat"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-gencat"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-gencat" (*)
+        │   │   ├── regex feature "unicode-perl"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-perl"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-perl"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   ├── regex-automata feature "unicode-word-boundary"
+        │   │   │   │   └── regex-automata v0.4.9 (*)
+        │   │   │   └── regex-syntax feature "unicode-perl" (*)
+        │   │   ├── regex feature "unicode-script"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-script"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-script"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-script" (*)
+        │   │   ├── regex feature "unicode-segment"
+        │   │   │   ├── regex v1.11.1 (*)
+        │   │   │   ├── regex-automata feature "unicode-segment"
+        │   │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   │   └── regex-syntax feature "unicode-segment"
+        │   │   │   │       └── regex-syntax v0.8.5
+        │   │   │   └── regex-syntax feature "unicode-segment" (*)
+        │   │   ├── regex-automata feature "unicode"
+        │   │   │   ├── regex-automata v0.4.9 (*)
+        │   │   │   ├── regex-automata feature "unicode-age" (*)
+        │   │   │   ├── regex-automata feature "unicode-bool" (*)
+        │   │   │   ├── regex-automata feature "unicode-case" (*)
+        │   │   │   ├── regex-automata feature "unicode-gencat" (*)
+        │   │   │   ├── regex-automata feature "unicode-perl" (*)
+        │   │   │   ├── regex-automata feature "unicode-script" (*)
+        │   │   │   ├── regex-automata feature "unicode-segment" (*)
+        │   │   │   ├── regex-automata feature "unicode-word-boundary" (*)
+        │   │   │   └── regex-syntax feature "unicode"
+        │   │   │       ├── regex-syntax v0.8.5
+        │   │   │       ├── regex-syntax feature "unicode-age" (*)
+        │   │   │       ├── regex-syntax feature "unicode-bool" (*)
+        │   │   │       ├── regex-syntax feature "unicode-case" (*)
+        │   │   │       ├── regex-syntax feature "unicode-gencat" (*)
+        │   │   │       ├── regex-syntax feature "unicode-perl" (*)
+        │   │   │       ├── regex-syntax feature "unicode-script" (*)
+        │   │   │       └── regex-syntax feature "unicode-segment" (*)
+        │   │   └── regex-syntax feature "unicode" (*)
+        │   └── regex-syntax feature "default"
+        │       ├── regex-syntax v0.8.5
+        │       ├── regex-syntax feature "std" (*)
+        │       └── regex-syntax feature "unicode" (*)
+        ├── regex-syntax feature "default" (*)
+        ├── dyn-clone feature "default"
+        │   └── dyn-clone v1.0.19
+        ├── idna feature "default"
+        │   ├── idna v1.0.3
+        │   │   ├── idna_adapter feature "default"
+        │   │   │   └── idna_adapter v1.2.1
+        │   │   │       ├── icu_normalizer v2.0.0
+        │   │   │       │   ├── displaydoc v0.2.5 (proc-macro)
+        │   │   │       │   │   ├── proc-macro2 feature "default"
+        │   │   │       │   │   │   ├── proc-macro2 v1.0.95
+        │   │   │       │   │   │   │   └── unicode-ident feature "default"
+        │   │   │       │   │   │   │       └── unicode-ident v1.0.18
+        │   │   │       │   │   │   └── proc-macro2 feature "proc-macro"
+        │   │   │       │   │   │       └── proc-macro2 v1.0.95 (*)
+        │   │   │       │   │   ├── quote feature "default"
+        │   │   │       │   │   │   ├── quote v1.0.40
+        │   │   │       │   │   │   │   └── proc-macro2 v1.0.95 (*)
+        │   │   │       │   │   │   └── quote feature "proc-macro"
+        │   │   │       │   │   │       ├── quote v1.0.40 (*)
+        │   │   │       │   │   │       └── proc-macro2 feature "proc-macro" (*)
+        │   │   │       │   │   └── syn feature "default"
+        │   │   │       │   │       ├── syn v2.0.103
+        │   │   │       │   │       │   ├── proc-macro2 v1.0.95 (*)
+        │   │   │       │   │       │   ├── quote v1.0.40 (*)
+        │   │   │       │   │       │   └── unicode-ident feature "default" (*)
+        │   │   │       │   │       ├── syn feature "clone-impls"
+        │   │   │       │   │       │   └── syn v2.0.103 (*)
+        │   │   │       │   │       ├── syn feature "derive"
+        │   │   │       │   │       │   └── syn v2.0.103 (*)
+        │   │   │       │   │       ├── syn feature "parsing"
+        │   │   │       │   │       │   └── syn v2.0.103 (*)
+        │   │   │       │   │       ├── syn feature "printing"
+        │   │   │       │   │       │   └── syn v2.0.103 (*)
+        │   │   │       │   │       └── syn feature "proc-macro"
+        │   │   │       │   │           ├── syn v2.0.103 (*)
+        │   │   │       │   │           ├── proc-macro2 feature "proc-macro" (*)
+        │   │   │       │   │           └── quote feature "proc-macro" (*)
+        │   │   │       │   ├── icu_collections v2.0.0
+        │   │   │       │   │   ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │       │   │   ├── potential_utf feature "zerovec"
+        │   │   │       │   │   │   └── potential_utf v0.1.2
+        │   │   │       │   │   │       └── zerovec v0.11.2
+        │   │   │       │   │   │           ├── yoke v0.8.0
+        │   │   │       │   │   │           │   ├── stable_deref_trait v1.2.0
+        │   │   │       │   │   │           │   ├── yoke-derive v0.8.0 (proc-macro)
+        │   │   │       │   │   │           │   │   ├── proc-macro2 feature "default" (*)
+        │   │   │       │   │   │           │   │   ├── quote feature "default" (*)
+        │   │   │       │   │   │           │   │   ├── syn feature "default" (*)
+        │   │   │       │   │   │           │   │   ├── syn feature "fold"
+        │   │   │       │   │   │           │   │   │   └── syn v2.0.103 (*)
+        │   │   │       │   │   │           │   │   └── synstructure feature "default"
+        │   │   │       │   │   │           │   │       ├── synstructure v0.13.2
+        │   │   │       │   │   │           │   │       │   ├── proc-macro2 v1.0.95 (*)
+        │   │   │       │   │   │           │   │       │   ├── quote v1.0.40 (*)
+        │   │   │       │   │   │           │   │       │   ├── syn feature "clone-impls" (*)
+        │   │   │       │   │   │           │   │       │   ├── syn feature "derive" (*)
+        │   │   │       │   │   │           │   │       │   ├── syn feature "extra-traits"
+        │   │   │       │   │   │           │   │       │   │   └── syn v2.0.103 (*)
+        │   │   │       │   │   │           │   │       │   ├── syn feature "parsing" (*)
+        │   │   │       │   │   │           │   │       │   ├── syn feature "printing" (*)
+        │   │   │       │   │   │           │   │       │   └── syn feature "visit"
+        │   │   │       │   │   │           │   │       │       └── syn v2.0.103 (*)
+        │   │   │       │   │   │           │   │       └── synstructure feature "proc-macro"
+        │   │   │       │   │   │           │   │           ├── synstructure v0.13.2 (*)
+        │   │   │       │   │   │           │   │           ├── proc-macro2 feature "proc-macro" (*)
+        │   │   │       │   │   │           │   │           ├── quote feature "proc-macro" (*)
+        │   │   │       │   │   │           │   │           └── syn feature "proc-macro" (*)
+        │   │   │       │   │   │           │   └── zerofrom v0.1.6
+        │   │   │       │   │   │           │       └── zerofrom-derive v0.1.6 (proc-macro)
+        │   │   │       │   │   │           │           ├── proc-macro2 feature "default" (*)
+        │   │   │       │   │   │           │           ├── quote feature "default" (*)
+        │   │   │       │   │   │           │           ├── syn feature "default" (*)
+        │   │   │       │   │   │           │           ├── syn feature "fold" (*)
+        │   │   │       │   │   │           │           └── synstructure feature "default" (*)
+        │   │   │       │   │   │           ├── zerofrom v0.1.6 (*)
+        │   │   │       │   │   │           └── zerovec-derive v0.11.1 (proc-macro)
+        │   │   │       │   │   │               ├── proc-macro2 feature "default" (*)
+        │   │   │       │   │   │               ├── quote feature "default" (*)
+        │   │   │       │   │   │               ├── syn feature "default" (*)
+        │   │   │       │   │   │               └── syn feature "extra-traits" (*)
+        │   │   │       │   │   ├── zerovec feature "derive"
+        │   │   │       │   │   │   └── zerovec v0.11.2 (*)
+        │   │   │       │   │   ├── zerovec feature "yoke"
+        │   │   │       │   │   │   └── zerovec v0.11.2 (*)
+        │   │   │       │   │   ├── yoke feature "derive"
+        │   │   │       │   │   │   ├── yoke v0.8.0 (*)
+        │   │   │       │   │   │   ├── yoke feature "zerofrom"
+        │   │   │       │   │   │   │   └── yoke v0.8.0 (*)
+        │   │   │       │   │   │   └── zerofrom feature "derive"
+        │   │   │       │   │   │       └── zerofrom v0.1.6 (*)
+        │   │   │       │   │   └── zerofrom feature "derive" (*)
+        │   │   │       │   ├── icu_normalizer_data v2.0.0
+        │   │   │       │   ├── icu_provider v2.0.0
+        │   │   │       │   │   ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │       │   │   ├── icu_locale_core v2.0.0
+        │   │   │       │   │   │   ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │       │   │   │   ├── writeable v0.6.1
+        │   │   │       │   │   │   ├── zerovec v0.11.2 (*)
+        │   │   │       │   │   │   ├── litemap feature "alloc"
+        │   │   │       │   │   │   │   └── litemap v0.8.0
+        │   │   │       │   │   │   └── tinystr feature "alloc"
+        │   │   │       │   │   │       ├── tinystr v0.8.1
+        │   │   │       │   │   │       │   ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │       │   │   │       │   └── zerovec v0.11.2 (*)
+        │   │   │       │   │   │       └── zerovec feature "alloc"
+        │   │   │       │   │   │           └── zerovec v0.11.2 (*)
+        │   │   │       │   │   ├── stable_deref_trait v1.2.0
+        │   │   │       │   │   ├── tinystr v0.8.1 (*)
+        │   │   │       │   │   ├── writeable v0.6.1
+        │   │   │       │   │   ├── zerotrie v0.2.2
+        │   │   │       │   │   │   ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │       │   │   │   ├── zerofrom v0.1.6 (*)
+        │   │   │       │   │   │   └── yoke feature "derive" (*)
+        │   │   │       │   │   ├── zerovec feature "derive" (*)
+        │   │   │       │   │   ├── yoke feature "alloc"
+        │   │   │       │   │   │   ├── yoke v0.8.0 (*)
+        │   │   │       │   │   │   ├── yoke feature "zerofrom" (*)
+        │   │   │       │   │   │   ├── stable_deref_trait feature "alloc"
+        │   │   │       │   │   │   │   └── stable_deref_trait v1.2.0
+        │   │   │       │   │   │   └── zerofrom feature "alloc"
+        │   │   │       │   │   │       └── zerofrom v0.1.6 (*)
+        │   │   │       │   │   ├── yoke feature "derive" (*)
+        │   │   │       │   │   ├── zerofrom feature "alloc" (*)
+        │   │   │       │   │   └── zerofrom feature "derive" (*)
+        │   │   │       │   ├── smallvec v1.15.1
+        │   │   │       │   └── zerovec v0.11.2 (*)
+        │   │   │       └── icu_properties v2.0.1
+        │   │   │           ├── displaydoc v0.2.5 (proc-macro) (*)
+        │   │   │           ├── icu_collections v2.0.0 (*)
+        │   │   │           ├── icu_properties_data v2.0.1
+        │   │   │           ├── icu_provider v2.0.0 (*)
+        │   │   │           ├── potential_utf feature "zerovec" (*)
+        │   │   │           ├── zerovec feature "derive" (*)
+        │   │   │           ├── zerovec feature "yoke" (*)
+        │   │   │           ├── icu_locale_core feature "zerovec"
+        │   │   │           │   ├── icu_locale_core v2.0.0 (*)
+        │   │   │           │   └── tinystr feature "zerovec"
+        │   │   │           │       └── tinystr v0.8.1 (*)
+        │   │   │           ├── zerotrie feature "yoke"
+        │   │   │           │   └── zerotrie v0.2.2 (*)
+        │   │   │           └── zerotrie feature "zerofrom"
+        │   │   │               └── zerotrie v0.2.2 (*)
+        │   │   ├── smallvec feature "const_generics"
+        │   │   │   └── smallvec v1.15.1
+        │   │   ├── smallvec feature "default"
+        │   │   │   └── smallvec v1.15.1
+        │   │   └── utf8_iter feature "default"
+        │   │       └── utf8_iter v1.0.4
+        │   ├── idna feature "compiled_data"
+        │   │   ├── idna v1.0.3 (*)
+        │   │   └── idna_adapter feature "compiled_data"
+        │   │       ├── idna_adapter v1.2.1 (*)
+        │   │       ├── icu_normalizer feature "compiled_data"
+        │   │       │   ├── icu_normalizer v2.0.0 (*)
+        │   │       │   └── icu_provider feature "baked"
+        │   │       │       ├── icu_provider v2.0.0 (*)
+        │   │       │       └── icu_provider feature "zerotrie"
+        │   │       │           └── icu_provider v2.0.0 (*)
+        │   │       └── icu_properties feature "compiled_data"
+        │   │           ├── icu_properties v2.0.1 (*)
+        │   │           └── icu_provider feature "baked" (*)
+        │   └── idna feature "std"
+        │       ├── idna v1.0.3 (*)
+        │       └── idna feature "alloc"
+        │           └── idna v1.0.3 (*)
+        ├── lalrpop-util feature "default"
+        │   ├── lalrpop-util v0.20.2
+        │   ├── lalrpop-util feature "std"
+        │   │   └── lalrpop-util v0.20.2
+        │   └── lalrpop-util feature "unicode"
+        │       └── lalrpop-util v0.20.2
+        ├── sha1collisiondetection feature "std"
+        │   └── sha1collisiondetection v0.3.4
+        │       └── generic-array feature "default"
+        │           └── generic-array v1.2.0
+        │               ├── typenum feature "const-generics"
+        │               │   └── typenum v1.18.0
+        │               └── typenum feature "default" (*)
+        ├── thiserror feature "default"
+        │   ├── thiserror v2.0.12
+        │   │   └── thiserror-impl feature "default"
+        │   │       └── thiserror-impl v2.0.12 (proc-macro)
+        │   │           ├── proc-macro2 feature "default" (*)
+        │   │           ├── quote feature "default" (*)
+        │   │           └── syn feature "default" (*)
+        │   └── thiserror feature "std"
+        │       └── thiserror v2.0.12 (*)
+        ├── xxhash-rust feature "default"
+        │   └── xxhash-rust v0.8.15
+        └── xxhash-rust feature "xxh3"
+            └── xxhash-rust v0.8.15
+        [build-dependencies]
+        └── lalrpop v0.20.2
+            ├── ascii-canvas v3.0.0
+            │   └── term feature "default"
+            │       └── term v0.7.0
+            │           └── dirs-next feature "default"
+            │               └── dirs-next v2.0.0
+            │                   ├── cfg-if feature "default" (*)
+            │                   └── dirs-sys-next feature "default"
+            │                       └── dirs-sys-next v0.1.2
+            │                           └── libc feature "default" (*)
+            ├── bit-set v0.5.3
+            │   └── bit-vec v0.6.3
+            ├── ena v0.14.3
+            │   └── log feature "default"
+            │       └── log v0.4.27
+            ├── lalrpop-util v0.20.2
+            ├── petgraph v0.6.5
+            │   ├── fixedbitset v0.4.2
+            │   └── indexmap feature "default"
+            │       ├── indexmap v2.9.0
+            │       │   ├── equivalent v1.0.2
+            │       │   └── hashbrown v0.15.4
+            │       └── indexmap feature "std"
+            │           └── indexmap v2.9.0 (*)
+            ├── regex-syntax v0.8.5
+            ├── string_cache v0.8.9
+            │   ├── new_debug_unreachable feature "default"
+            │   │   └── new_debug_unreachable v1.0.6
+            │   ├── parking_lot feature "default"
+            │   │   └── parking_lot v0.12.4
+            │   │       ├── lock_api feature "default"
+            │   │       │   ├── lock_api v0.4.13
+            │   │       │   │   └── scopeguard v1.2.0
+            │   │       │   │   [build-dependencies]
+            │   │       │   │   └── autocfg feature "default"
+            │   │       │   │       └── autocfg v1.4.0
+            │   │       │   └── lock_api feature "atomic_usize"
+            │   │       │       └── lock_api v0.4.13 (*)
+            │   │       └── parking_lot_core feature "default"
+            │   │           └── parking_lot_core v0.9.11
+            │   │               ├── cfg-if feature "default" (*)
+            │   │               ├── libc feature "default" (*)
+            │   │               └── smallvec feature "default" (*)
+            │   ├── phf_shared feature "default"
+            │   │   ├── phf_shared v0.11.3
+            │   │   │   └── siphasher feature "default"
+            │   │   │       ├── siphasher v1.0.1
+            │   │   │       └── siphasher feature "std"
+            │   │   │           └── siphasher v1.0.1
+            │   │   └── phf_shared feature "std"
+            │   │       └── phf_shared v0.11.3 (*)
+            │   └── precomputed-hash feature "default"
+            │       └── precomputed-hash v0.1.1
+            ├── term v0.7.0 (*)
+            ├── unicode-xid v0.2.6
+            ├── regex feature "std" (*)
+            ├── walkdir feature "default"
+            │   └── walkdir v2.5.0
+            │       └── same-file feature "default"
+            │           └── same-file v1.0.6
+            ├── itertools feature "use_std"
+            │   ├── itertools v0.11.0
+            │   │   └── either v1.15.0
+            │   ├── either feature "use_std"
+            │   │   ├── either v1.15.0
+            │   │   └── either feature "std"
+            │   │       └── either v1.15.0
+            │   └── itertools feature "use_alloc"
+            │       └── itertools v0.11.0 (*)
+            ├── tiny-keccak feature "default"
+            │   └── tiny-keccak v2.0.2
+            │       └── crunchy feature "default"
+            │           ├── crunchy v0.2.3
+            │           └── crunchy feature "limit_128"
+            │               └── crunchy v0.2.3
+            └── tiny-keccak feature "sha3"
+                └── tiny-keccak v2.0.2 (*)
+        [dev-dependencies]
+        ├── quickcheck v1.0.3
+        │   ├── rand feature "getrandom"
+        │   │   ├── rand v0.8.5
+        │   │   │   ├── libc v0.2.173
+        │   │   │   ├── rand_chacha v0.3.1
+        │   │   │   │   ├── rand_core feature "default"
+        │   │   │   │   │   └── rand_core v0.6.4 (*)
+        │   │   │   │   └── ppv-lite86 feature "simd"
+        │   │   │   │       └── ppv-lite86 v0.2.21
+        │   │   │   │           ├── zerocopy feature "default"
+        │   │   │   │           │   └── zerocopy v0.8.25
+        │   │   │   │           └── zerocopy feature "simd"
+        │   │   │   │               └── zerocopy v0.8.25
+        │   │   │   └── rand_core feature "default" (*)
+        │   │   └── rand_core feature "getrandom"
+        │   │       └── rand_core v0.6.4 (*)
+        │   └── rand feature "small_rng"
+        │       └── rand v0.8.5 (*)
+        ├── criterion feature "default"
+        │   ├── criterion v0.5.1
+        │   │   ├── anes feature "default"
+        │   │   │   └── anes v0.1.6
+        │   │   ├── cast feature "default"
+        │   │   │   └── cast v0.3.0
+        │   │   ├── ciborium feature "default"
+        │   │   │   ├── ciborium v0.2.2
+        │   │   │   │   ├── ciborium-io feature "alloc"
+        │   │   │   │   │   └── ciborium-io v0.2.2
+        │   │   │   │   ├── ciborium-io feature "default"
+        │   │   │   │   │   └── ciborium-io v0.2.2
+        │   │   │   │   ├── ciborium-ll feature "default"
+        │   │   │   │   │   └── ciborium-ll v0.2.2
+        │   │   │   │   │       ├── half v2.6.0
+        │   │   │   │   │       │   └── cfg-if feature "default" (*)
+        │   │   │   │   │       └── ciborium-io feature "default" (*)
+        │   │   │   │   ├── serde feature "alloc"
+        │   │   │   │   │   └── serde v1.0.219
+        │   │   │   │   │       └── serde_derive feature "default"
+        │   │   │   │   │           └── serde_derive v1.0.219 (proc-macro)
+        │   │   │   │   │               ├── proc-macro2 feature "proc-macro" (*)
+        │   │   │   │   │               ├── quote feature "proc-macro" (*)
+        │   │   │   │   │               ├── syn feature "clone-impls" (*)
+        │   │   │   │   │               ├── syn feature "derive" (*)
+        │   │   │   │   │               ├── syn feature "parsing" (*)
+        │   │   │   │   │               ├── syn feature "printing" (*)
+        │   │   │   │   │               └── syn feature "proc-macro" (*)
+        │   │   │   │   └── serde feature "derive"
+        │   │   │   │       ├── serde v1.0.219 (*)
+        │   │   │   │       └── serde feature "serde_derive"
+        │   │   │   │           └── serde v1.0.219 (*)
+        │   │   │   └── ciborium feature "std"
+        │   │   │       ├── ciborium v0.2.2 (*)
+        │   │   │       ├── ciborium-io feature "std"
+        │   │   │       │   ├── ciborium-io v0.2.2
+        │   │   │       │   └── ciborium-io feature "alloc" (*)
+        │   │   │       └── serde feature "std"
+        │   │   │           └── serde v1.0.219 (*)
+        │   │   ├── serde feature "default"
+        │   │   │   ├── serde v1.0.219 (*)
+        │   │   │   └── serde feature "std" (*)
+        │   │   ├── serde_derive feature "default" (*)
+        │   │   ├── clap feature "std"
+        │   │   │   ├── clap v4.5.40
+        │   │   │   │   ├── clap_builder v4.5.40
+        │   │   │   │   │   ├── anstream feature "default"
+        │   │   │   │   │   │   ├── anstream v0.6.19
+        │   │   │   │   │   │   │   ├── anstyle feature "default"
+        │   │   │   │   │   │   │   │   ├── anstyle v1.0.11
+        │   │   │   │   │   │   │   │   └── anstyle feature "std"
+        │   │   │   │   │   │   │   │       └── anstyle v1.0.11
+        │   │   │   │   │   │   │   ├── anstyle-parse feature "default"
+        │   │   │   │   │   │   │   │   ├── anstyle-parse v0.2.7
+        │   │   │   │   │   │   │   │   │   └── utf8parse feature "default"
+        │   │   │   │   │   │   │   │   │       └── utf8parse v0.2.2
+        │   │   │   │   │   │   │   │   └── anstyle-parse feature "utf8"
+        │   │   │   │   │   │   │   │       └── anstyle-parse v0.2.7 (*)
+        │   │   │   │   │   │   │   ├── utf8parse feature "default" (*)
+        │   │   │   │   │   │   │   ├── anstyle-query feature "default"
+        │   │   │   │   │   │   │   │   └── anstyle-query v1.1.3
+        │   │   │   │   │   │   │   ├── colorchoice feature "default"
+        │   │   │   │   │   │   │   │   └── colorchoice v1.0.4
+        │   │   │   │   │   │   │   └── is_terminal_polyfill feature "default"
+        │   │   │   │   │   │   │       └── is_terminal_polyfill v1.70.1
+        │   │   │   │   │   │   ├── anstream feature "auto"
+        │   │   │   │   │   │   │   └── anstream v0.6.19 (*)
+        │   │   │   │   │   │   └── anstream feature "wincon"
+        │   │   │   │   │   │       └── anstream v0.6.19 (*)
+        │   │   │   │   │   ├── anstyle feature "default" (*)
+        │   │   │   │   │   ├── clap_lex feature "default"
+        │   │   │   │   │   │   └── clap_lex v0.7.5
+        │   │   │   │   │   ├── strsim feature "default"
+        │   │   │   │   │   │   └── strsim v0.11.1
+        │   │   │   │   │   └── terminal_size feature "default"
+        │   │   │   │   │       └── terminal_size v0.4.2
+        │   │   │   │   │           ├── rustix feature "default"
+        │   │   │   │   │           │   ├── rustix v1.0.7
+        │   │   │   │   │           │   │   ├── bitflags v2.9.1
+        │   │   │   │   │           │   │   ├── errno v0.3.12
+        │   │   │   │   │           │   │   │   └── libc v0.2.173
+        │   │   │   │   │           │   │   └── libc v0.2.173
+        │   │   │   │   │           │   └── rustix feature "std"
+        │   │   │   │   │           │       ├── rustix v1.0.7 (*)
+        │   │   │   │   │           │       ├── libc feature "std" (*)
+        │   │   │   │   │           │       ├── rustix feature "alloc"
+        │   │   │   │   │           │       │   └── rustix v1.0.7 (*)
+        │   │   │   │   │           │       ├── bitflags feature "std"
+        │   │   │   │   │           │       │   └── bitflags v2.9.1
+        │   │   │   │   │           │       └── errno feature "std"
+        │   │   │   │   │           │           ├── errno v0.3.12 (*)
+        │   │   │   │   │           │           └── libc feature "std" (*)
+        │   │   │   │   │           └── rustix feature "termios"
+        │   │   │   │   │               └── rustix v1.0.7 (*)
+        │   │   │   │   └── clap_derive feature "default"
+        │   │   │   │       └── clap_derive v4.5.40 (proc-macro)
+        │   │   │   │           ├── proc-macro2 feature "default" (*)
+        │   │   │   │           ├── quote feature "default" (*)
+        │   │   │   │           ├── syn feature "default" (*)
+        │   │   │   │           ├── syn feature "full"
+        │   │   │   │           │   └── syn v2.0.103 (*)
+        │   │   │   │           └── heck feature "default"
+        │   │   │   │               └── heck v0.5.0
+        │   │   │   └── clap_builder feature "std"
+        │   │   │       ├── clap_builder v4.5.40 (*)
+        │   │   │       └── anstyle feature "std" (*)
+        │   │   ├── criterion-plot feature "default"
+        │   │   │   └── criterion-plot v0.5.0
+        │   │   │       ├── cast feature "default" (*)
+        │   │   │       └── itertools feature "default"
+        │   │   │           ├── itertools v0.10.5
+        │   │   │           │   └── either v1.15.0
+        │   │   │           └── itertools feature "use_std"
+        │   │   │               ├── itertools v0.10.5 (*)
+        │   │   │               ├── itertools feature "use_alloc"
+        │   │   │               │   └── itertools v0.10.5 (*)
+        │   │   │               └── either feature "use_std" (*)
+        │   │   ├── itertools feature "default" (*)
+        │   │   ├── is-terminal feature "default"
+        │   │   │   └── is-terminal v0.4.16
+        │   │   │       └── libc feature "default" (*)
+        │   │   ├── num-traits feature "std"
+        │   │   │   └── num-traits v0.2.19
+        │   │   │       [build-dependencies]
+        │   │   │       └── autocfg feature "default" (*)
+        │   │   ├── once_cell feature "default"
+        │   │   │   ├── once_cell v1.21.3
+        │   │   │   └── once_cell feature "std"
+        │   │   │       ├── once_cell v1.21.3
+        │   │   │       └── once_cell feature "alloc"
+        │   │   │           ├── once_cell v1.21.3
+        │   │   │           └── once_cell feature "race"
+        │   │   │               └── once_cell v1.21.3
+        │   │   ├── oorandom feature "default"
+        │   │   │   └── oorandom v11.1.5
+        │   │   ├── plotters feature "area_series"
+        │   │   │   └── plotters v0.3.7
+        │   │   │       ├── num-traits feature "default"
+        │   │   │       │   ├── num-traits v0.2.19 (*)
+        │   │   │       │   └── num-traits feature "std" (*)
+        │   │   │       ├── plotters-backend feature "default"
+        │   │   │       │   └── plotters-backend v0.3.7
+        │   │   │       └── plotters-svg feature "default"
+        │   │   │           └── plotters-svg v0.3.7
+        │   │   │               └── plotters-backend feature "default" (*)
+        │   │   ├── plotters feature "line_series"
+        │   │   │   └── plotters v0.3.7 (*)
+        │   │   ├── plotters feature "svg_backend"
+        │   │   │   ├── plotters v0.3.7 (*)
+        │   │   │   └── plotters feature "plotters-svg"
+        │   │   │       └── plotters v0.3.7 (*)
+        │   │   ├── rayon feature "default"
+        │   │   │   └── rayon v1.10.0
+        │   │   │       ├── either v1.15.0
+        │   │   │       └── rayon-core feature "default"
+        │   │   │           └── rayon-core v1.12.1
+        │   │   │               ├── crossbeam-deque feature "default"
+        │   │   │               │   ├── crossbeam-deque v0.8.6
+        │   │   │               │   │   ├── crossbeam-epoch v0.9.18
+        │   │   │               │   │   │   └── crossbeam-utils v0.8.21
+        │   │   │               │   │   └── crossbeam-utils v0.8.21
+        │   │   │               │   └── crossbeam-deque feature "std"
+        │   │   │               │       ├── crossbeam-deque v0.8.6 (*)
+        │   │   │               │       ├── crossbeam-epoch feature "std"
+        │   │   │               │       │   ├── crossbeam-epoch v0.9.18 (*)
+        │   │   │               │       │   ├── crossbeam-epoch feature "alloc"
+        │   │   │               │       │   │   └── crossbeam-epoch v0.9.18 (*)
+        │   │   │               │       │   └── crossbeam-utils feature "std"
+        │   │   │               │       │       └── crossbeam-utils v0.8.21
+        │   │   │               │       └── crossbeam-utils feature "std" (*)
+        │   │   │               └── crossbeam-utils feature "default"
+        │   │   │                   ├── crossbeam-utils v0.8.21
+        │   │   │                   └── crossbeam-utils feature "std" (*)
+        │   │   ├── regex feature "std" (*)
+        │   │   ├── serde_json feature "default"
+        │   │   │   ├── serde_json v1.0.140
+        │   │   │   │   ├── memchr v2.7.5
+        │   │   │   │   ├── serde v1.0.219 (*)
+        │   │   │   │   ├── itoa feature "default"
+        │   │   │   │   │   └── itoa v1.0.15
+        │   │   │   │   └── ryu feature "default"
+        │   │   │   │       └── ryu v1.0.20
+        │   │   │   └── serde_json feature "std"
+        │   │   │       ├── serde_json v1.0.140 (*)
+        │   │   │       ├── serde feature "std" (*)
+        │   │   │       └── memchr feature "std" (*)
+        │   │   ├── tinytemplate feature "default"
+        │   │   │   └── tinytemplate v1.2.1
+        │   │   │       ├── serde feature "default" (*)
+        │   │   │       └── serde_json feature "default" (*)
+        │   │   └── walkdir feature "default" (*)
+        │   ├── criterion feature "cargo_bench_support"
+        │   │   └── criterion v0.5.1 (*)
+        │   ├── criterion feature "plotters"
+        │   │   └── criterion v0.5.1 (*)
+        │   └── criterion feature "rayon"
+        │       └── criterion v0.5.1 (*)
+        ├── criterion feature "html_reports"
+        │   └── criterion v0.5.1 (*)
+        ├── rand feature "std"
+        │   ├── rand v0.8.5 (*)
+        │   ├── rand_core feature "std"
+        │   │   ├── rand_core v0.6.4 (*)
+        │   │   ├── rand_core feature "alloc"
+        │   │   │   └── rand_core v0.6.4 (*)
+        │   │   ├── rand_core feature "getrandom" (*)
+        │   │   └── getrandom feature "std"
+        │   │       └── getrandom v0.2.16 (*)
+        │   ├── rand feature "alloc"
+        │   │   ├── rand v0.8.5 (*)
+        │   │   └── rand_core feature "alloc" (*)
+        │   ├── rand feature "getrandom" (*)
+        │   ├── rand feature "libc"
+        │   │   └── rand v0.8.5 (*)
+        │   ├── rand feature "rand_chacha"
+        │   │   └── rand v0.8.5 (*)
+        │   └── rand_chacha feature "std"
+        │       ├── rand_chacha v0.3.1 (*)
+        │       └── ppv-lite86 feature "std"
+        │           └── ppv-lite86 v0.2.21 (*)
+        ├── rand feature "std_rng"
+        │   ├── rand v0.8.5 (*)
+        │   └── rand feature "rand_chacha" (*)
+        └── rpassword feature "default"
+            └── rpassword v7.4.0
+                ├── libc feature "default" (*)
+                └── rtoolbox feature "default"
+                    └── rtoolbox v0.0.3
+                        └── libc feature "default" (*)
+
+sequoia-ipc v0.36.0 (/Users/thor3/Documents/loveit/ipc)
+├── memsec v0.7.0
+├── libc feature "default" (*)
+├── sequoia-openpgp feature "crypto-openssl" (*)
+├── anyhow feature "default" (*)
+├── lalrpop-util feature "default" (*)
+├── rand feature "default"
+│   ├── rand v0.8.5 (*)
+│   ├── rand feature "std" (*)
+│   └── rand feature "std_rng" (*)
+├── thiserror feature "default" (*)
+├── capnp-rpc feature "default"
+│   └── capnp-rpc v0.19.5
+│       ├── capnp feature "default"
+│       │   ├── capnp v0.19.8
+│       │   ├── capnp feature "alloc"
+│       │   │   └── capnp v0.19.8
+│       │   └── capnp feature "std"
+│       │       └── capnp v0.19.8
+│       ├── capnp-futures feature "default"
+│       │   └── capnp-futures v0.19.1
+│       │       ├── capnp feature "default" (*)
+│       │       └── futures feature "std"
+│       │           ├── futures v0.3.31
+│       │           │   ├── futures-core v0.3.31
+│       │           │   ├── futures-executor v0.3.31
+│       │           │   │   ├── futures-core v0.3.31
+│       │           │   │   ├── futures-task v0.3.31
+│       │           │   │   └── futures-util v0.3.31
+│       │           │   │       ├── futures-core v0.3.31
+│       │           │   │       ├── futures-macro v0.3.31 (proc-macro)
+│       │           │   │       │   ├── proc-macro2 feature "default" (*)
+│       │           │   │       │   ├── quote feature "default" (*)
+│       │           │   │       │   ├── syn feature "default" (*)
+│       │           │   │       │   └── syn feature "full" (*)
+│       │           │   │       ├── futures-sink v0.3.31
+│       │           │   │       ├── futures-task v0.3.31
+│       │           │   │       ├── memchr feature "default"
+│       │           │   │       │   ├── memchr v2.7.5
+│       │           │   │       │   └── memchr feature "std" (*)
+│       │           │   │       ├── futures-channel feature "std"
+│       │           │   │       │   ├── futures-channel v0.3.31
+│       │           │   │       │   │   ├── futures-core v0.3.31
+│       │           │   │       │   │   └── futures-sink v0.3.31
+│       │           │   │       │   ├── futures-channel feature "alloc"
+│       │           │   │       │   │   ├── futures-channel v0.3.31 (*)
+│       │           │   │       │   │   └── futures-core feature "alloc"
+│       │           │   │       │   │       └── futures-core v0.3.31
+│       │           │   │       │   └── futures-core feature "std"
+│       │           │   │       │       ├── futures-core v0.3.31
+│       │           │   │       │       └── futures-core feature "alloc" (*)
+│       │           │   │       ├── futures-io feature "std"
+│       │           │   │       │   └── futures-io v0.3.31
+│       │           │   │       ├── pin-project-lite feature "default"
+│       │           │   │       │   └── pin-project-lite v0.2.16
+│       │           │   │       ├── pin-utils feature "default"
+│       │           │   │       │   └── pin-utils v0.1.0
+│       │           │   │       └── slab feature "default"
+│       │           │   │           ├── slab v0.4.9
+│       │           │   │           │   [build-dependencies]
+│       │           │   │           │   └── autocfg feature "default" (*)
+│       │           │   │           └── slab feature "std"
+│       │           │   │               └── slab v0.4.9 (*)
+│       │           │   ├── futures-io v0.3.31
+│       │           │   ├── futures-sink v0.3.31
+│       │           │   ├── futures-task v0.3.31
+│       │           │   ├── futures-channel feature "sink"
+│       │           │   │   ├── futures-channel v0.3.31 (*)
+│       │           │   │   └── futures-channel feature "futures-sink"
+│       │           │   │       └── futures-channel v0.3.31 (*)
+│       │           │   └── futures-util feature "sink"
+│       │           │       ├── futures-util v0.3.31 (*)
+│       │           │       └── futures-util feature "futures-sink"
+│       │           │           └── futures-util v0.3.31 (*)
+│       │           ├── futures feature "alloc"
+│       │           │   ├── futures v0.3.31 (*)
+│       │           │   ├── futures-channel feature "alloc" (*)
+│       │           │   ├── futures-core feature "alloc" (*)
+│       │           │   ├── futures-sink feature "alloc"
+│       │           │   │   └── futures-sink v0.3.31
+│       │           │   ├── futures-task feature "alloc"
+│       │           │   │   └── futures-task v0.3.31
+│       │           │   └── futures-util feature "alloc"
+│       │           │       ├── futures-util v0.3.31 (*)
+│       │           │       ├── futures-core feature "alloc" (*)
+│       │           │       └── futures-task feature "alloc" (*)
+│       │           ├── futures-core feature "std" (*)
+│       │           ├── futures-sink feature "std"
+│       │           │   ├── futures-sink v0.3.31
+│       │           │   └── futures-sink feature "alloc" (*)
+│       │           ├── futures-task feature "std"
+│       │           │   ├── futures-task v0.3.31
+│       │           │   └── futures-task feature "alloc" (*)
+│       │           ├── futures-util feature "channel"
+│       │           │   ├── futures-util v0.3.31 (*)
+│       │           │   ├── futures-util feature "futures-channel"
+│       │           │   │   └── futures-util v0.3.31 (*)
+│       │           │   └── futures-util feature "std"
+│       │           │       ├── futures-util v0.3.31 (*)
+│       │           │       ├── futures-core feature "std" (*)
+│       │           │       ├── futures-task feature "std" (*)
+│       │           │       ├── futures-util feature "alloc" (*)
+│       │           │       └── futures-util feature "slab"
+│       │           │           └── futures-util v0.3.31 (*)
+│       │           ├── futures-util feature "io"
+│       │           │   ├── futures-util v0.3.31 (*)
+│       │           │   ├── futures-util feature "futures-io"
+│       │           │   │   └── futures-util v0.3.31 (*)
+│       │           │   ├── futures-util feature "memchr"
+│       │           │   │   └── futures-util v0.3.31 (*)
+│       │           │   └── futures-util feature "std" (*)
+│       │           ├── futures-util feature "std" (*)
+│       │           └── futures-io feature "std" (*)
+│       └── futures feature "std" (*)
+├── dirs feature "default"
+│   └── dirs v5.0.1
+│       └── dirs-sys feature "default"
+│           └── dirs-sys v0.4.1
+│               ├── libc feature "default" (*)
+│               └── option-ext feature "default"
+│                   └── option-ext v0.2.0
+├── fs2 feature "default"
+│   └── fs2 v0.4.3
+│       └── libc feature "default" (*)
+├── socket2 feature "default"
+│   └── socket2 v0.5.10
+│       └── libc feature "default" (*)
+├── tempfile feature "default"
+│   ├── tempfile v3.20.0
+│   │   ├── getrandom v0.3.3
+│   │   │   ├── libc v0.2.173
+│   │   │   └── cfg-if feature "default" (*)
+│   │   ├── rustix feature "default" (*)
+│   │   ├── rustix feature "fs"
+│   │   │   └── rustix v1.0.7 (*)
+│   │   ├── once_cell feature "std" (*)
+│   │   └── fastrand feature "default"
+│   │       ├── fastrand v2.3.0
+│   │       └── fastrand feature "std"
+│   │           ├── fastrand v2.3.0
+│   │           └── fastrand feature "alloc"
+│   │               └── fastrand v2.3.0
+│   └── tempfile feature "getrandom"
+│       └── tempfile v3.20.0 (*)
+├── tokio feature "default"
+│   └── tokio v1.45.1
+│       ├── mio v1.0.4
+│       │   └── libc feature "default" (*)
+│       ├── libc feature "default" (*)
+│       ├── pin-project-lite feature "default" (*)
+│       ├── socket2 feature "all"
+│       │   └── socket2 v0.5.10 (*)
+│       ├── socket2 feature "default" (*)
+│       ├── bytes feature "default"
+│       │   ├── bytes v1.10.1
+│       │   └── bytes feature "std"
+│       │       └── bytes v1.10.1
+│       └── tokio-macros feature "default"
+│           └── tokio-macros v2.5.0 (proc-macro)
+│               ├── proc-macro2 feature "default" (*)
+│               ├── quote feature "default" (*)
+│               ├── syn feature "default" (*)
+│               └── syn feature "full" (*)
+├── tokio feature "io-util"
+│   ├── tokio v1.45.1 (*)
+│   └── tokio feature "bytes"
+│       └── tokio v1.45.1 (*)
+├── tokio feature "net"
+│   ├── tokio v1.45.1 (*)
+│   ├── tokio feature "libc"
+│   │   └── tokio v1.45.1 (*)
+│   ├── tokio feature "mio"
+│   │   └── tokio v1.45.1 (*)
+│   ├── tokio feature "socket2"
+│   │   └── tokio v1.45.1 (*)
+│   ├── mio feature "net"
+│   │   └── mio v1.0.4 (*)
+│   ├── mio feature "os-ext"
+│   │   ├── mio v1.0.4 (*)
+│   │   └── mio feature "os-poll"
+│   │       └── mio v1.0.4 (*)
+│   └── mio feature "os-poll" (*)
+├── tokio feature "rt-multi-thread"
+│   ├── tokio v1.45.1 (*)
+│   └── tokio feature "rt"
+│       └── tokio v1.45.1 (*)
+├── tokio-util feature "compat"
+│   ├── tokio-util v0.7.15
+│   │   ├── futures-core feature "default"
+│   │   │   ├── futures-core v0.3.31
+│   │   │   └── futures-core feature "std" (*)
+│   │   ├── futures-sink feature "default"
+│   │   │   ├── futures-sink v0.3.31
+│   │   │   └── futures-sink feature "std" (*)
+│   │   ├── futures-io feature "default"
+│   │   │   ├── futures-io v0.3.31
+│   │   │   └── futures-io feature "std" (*)
+│   │   ├── pin-project-lite feature "default" (*)
+│   │   ├── tokio feature "default" (*)
+│   │   ├── tokio feature "sync"
+│   │   │   └── tokio v1.45.1 (*)
+│   │   └── bytes feature "default" (*)
+│   └── tokio-util feature "futures-io"
+│       └── tokio-util v0.7.15 (*)
+└── tokio-util feature "default"
+    └── tokio-util v0.7.15 (*)
+[build-dependencies]
+├── lalrpop v0.20.2 (*)
+└── capnpc feature "default"
+    └── capnpc v0.19.0
+        └── capnp feature "default" (*)
+[dev-dependencies]
+├── quickcheck v1.0.3 (*)
+├── clap feature "default"
+│   ├── clap v4.5.40 (*)
+│   ├── clap feature "color"
+│   │   ├── clap v4.5.40 (*)
+│   │   └── clap_builder feature "color"
+│   │       └── clap_builder v4.5.40 (*)
+│   ├── clap feature "error-context"
+│   │   ├── clap v4.5.40 (*)
+│   │   └── clap_builder feature "error-context"
+│   │       └── clap_builder v4.5.40 (*)
+│   ├── clap feature "help"
+│   │   ├── clap v4.5.40 (*)
+│   │   └── clap_builder feature "help"
+│   │       └── clap_builder v4.5.40 (*)
+│   ├── clap feature "std" (*)
+│   ├── clap feature "suggestions"
+│   │   ├── clap v4.5.40 (*)
+│   │   └── clap_builder feature "suggestions"
+│   │       ├── clap_builder v4.5.40 (*)
+│   │       └── clap_builder feature "error-context" (*)
+│   └── clap feature "usage"
+│       ├── clap v4.5.40 (*)
+│       └── clap_builder feature "usage"
+│           └── clap_builder v4.5.40 (*)
+├── clap feature "derive"
+│   └── clap v4.5.40 (*)
+└── capnp feature "default" (*)
+
+sequoia-net v0.30.0 (/Users/thor3/Documents/loveit/net)
+├── libc feature "default" (*)
+├── base64 feature "default" (*)
+├── sequoia-openpgp feature "crypto-openssl" (*)
+├── anyhow feature "default" (*)
+├── futures-util feature "default"
+│   ├── futures-util v0.3.31 (*)
+│   ├── futures-util feature "async-await"
+│   │   └── futures-util v0.3.31 (*)
+│   ├── futures-util feature "async-await-macro"
+│   │   ├── futures-util v0.3.31 (*)
+│   │   ├── futures-util feature "async-await" (*)
+│   │   └── futures-util feature "futures-macro"
+│   │       └── futures-util v0.3.31 (*)
+│   └── futures-util feature "std" (*)
+├── tokio feature "default" (*)
+├── tokio feature "macros"
+│   ├── tokio v1.45.1 (*)
+│   └── tokio feature "tokio-macros"
+│       └── tokio v1.45.1 (*)
+├── hickory-client feature "default"
+│   └── hickory-client v0.24.4
+│       ├── cfg-if feature "default" (*)
+│       ├── once_cell feature "default" (*)
+│       ├── rand feature "default" (*)
+│       ├── futures-channel feature "std" (*)
+│       ├── futures-util feature "std" (*)
+│       ├── tokio feature "default" (*)
+│       ├── tokio feature "net" (*)
+│       ├── tokio feature "rt" (*)
+│       ├── data-encoding feature "default"
+│       │   ├── data-encoding v2.9.0
+│       │   └── data-encoding feature "std"
+│       │       ├── data-encoding v2.9.0
+│       │       └── data-encoding feature "alloc"
+│       │           └── data-encoding v2.9.0
+│       ├── hickory-proto feature "text-parsing"
+│       │   └── hickory-proto v0.24.4
+│       │       ├── cfg-if feature "default" (*)
+│       │       ├── once_cell feature "default" (*)
+│       │       ├── idna feature "default" (*)
+│       │       ├── rand feature "default" (*)
+│       │       ├── futures-channel feature "std" (*)
+│       │       ├── futures-util feature "std" (*)
+│       │       ├── futures-io feature "std" (*)
+│       │       ├── tokio feature "default" (*)
+│       │       ├── tokio feature "io-util" (*)
+│       │       ├── data-encoding feature "default" (*)
+│       │       ├── async-trait feature "default"
+│       │       │   └── async-trait v0.1.88 (proc-macro)
+│       │       │       ├── proc-macro2 feature "default" (*)
+│       │       │       ├── quote feature "default" (*)
+│       │       │       ├── syn feature "clone-impls" (*)
+│       │       │       ├── syn feature "full" (*)
+│       │       │       ├── syn feature "parsing" (*)
+│       │       │       ├── syn feature "printing" (*)
+│       │       │       ├── syn feature "proc-macro" (*)
+│       │       │       └── syn feature "visit-mut"
+│       │       │           └── syn v2.0.103 (*)
+│       │       ├── enum-as-inner feature "default"
+│       │       │   └── enum-as-inner v0.6.1 (proc-macro)
+│       │       │       ├── proc-macro2 feature "default" (*)
+│       │       │       ├── quote feature "default" (*)
+│       │       │       ├── syn feature "default" (*)
+│       │       │       └── heck feature "default" (*)
+│       │       ├── ipnet feature "default"
+│       │       │   ├── ipnet v2.11.0
+│       │       │   └── ipnet feature "std"
+│       │       │       └── ipnet v2.11.0
+│       │       ├── openssl feature "default"
+│       │       │   └── openssl v0.10.73
+│       │       │       ├── cfg-if feature "default" (*)
+│       │       │       ├── libc feature "default" (*)
+│       │       │       ├── bitflags feature "default"
+│       │       │       │   └── bitflags v2.9.1
+│       │       │       ├── once_cell feature "default" (*)
+│       │       │       ├── foreign-types feature "default"
+│       │       │       │   └── foreign-types v0.3.2
+│       │       │       │       └── foreign-types-shared feature "default"
+│       │       │       │           └── foreign-types-shared v0.1.1
+│       │       │       ├── openssl-macros feature "default"
+│       │       │       │   └── openssl-macros v0.1.1 (proc-macro)
+│       │       │       │       ├── proc-macro2 feature "default" (*)
+│       │       │       │       ├── quote feature "default" (*)
+│       │       │       │       ├── syn feature "default" (*)
+│       │       │       │       └── syn feature "full" (*)
+│       │       │       └── openssl-sys feature "default"
+│       │       │           └── openssl-sys v0.9.109
+│       │       │               └── libc feature "default" (*)
+│       │       │               [build-dependencies]
+│       │       │               ├── cc feature "default" (*)
+│       │       │               ├── pkg-config feature "default" (*)
+│       │       │               └── vcpkg feature "default"
+│       │       │                   └── vcpkg v0.2.15
+│       │       ├── openssl feature "v102"
+│       │       │   └── openssl v0.10.73 (*)
+│       │       ├── openssl feature "v110"
+│       │       │   └── openssl v0.10.73 (*)
+│       │       ├── thiserror feature "default"
+│       │       │   └── thiserror v1.0.69
+│       │       │       └── thiserror-impl feature "default"
+│       │       │           └── thiserror-impl v1.0.69 (proc-macro)
+│       │       │               ├── proc-macro2 feature "default" (*)
+│       │       │               ├── quote feature "default" (*)
+│       │       │               └── syn feature "default" (*)
+│       │       ├── tinyvec feature "alloc"
+│       │       │   ├── tinyvec v1.9.0
+│       │       │   │   └── tinyvec_macros feature "default"
+│       │       │   │       └── tinyvec_macros v0.1.1
+│       │       │   └── tinyvec feature "tinyvec_macros"
+│       │       │       └── tinyvec v1.9.0 (*)
+│       │       ├── tinyvec feature "default"
+│       │       │   └── tinyvec v1.9.0 (*)
+│       │       ├── tracing feature "default"
+│       │       │   ├── tracing v0.1.41
+│       │       │   │   ├── tracing-core v0.1.34
+│       │       │   │   │   └── once_cell feature "default" (*)
+│       │       │   │   ├── pin-project-lite feature "default" (*)
+│       │       │   │   └── tracing-attributes feature "default"
+│       │       │   │       └── tracing-attributes v0.1.29 (proc-macro)
+│       │       │   │           ├── proc-macro2 feature "default" (*)
+│       │       │   │           ├── quote feature "default" (*)
+│       │       │   │           ├── syn feature "clone-impls" (*)
+│       │       │   │           ├── syn feature "extra-traits" (*)
+│       │       │   │           ├── syn feature "full" (*)
+│       │       │   │           ├── syn feature "parsing" (*)
+│       │       │   │           ├── syn feature "printing" (*)
+│       │       │   │           ├── syn feature "proc-macro" (*)
+│       │       │   │           └── syn feature "visit-mut" (*)
+│       │       │   ├── tracing feature "attributes"
+│       │       │   │   ├── tracing v0.1.41 (*)
+│       │       │   │   └── tracing feature "tracing-attributes"
+│       │       │   │       └── tracing v0.1.41 (*)
+│       │       │   └── tracing feature "std"
+│       │       │       ├── tracing v0.1.41 (*)
+│       │       │       └── tracing-core feature "std"
+│       │       │           ├── tracing-core v0.1.34 (*)
+│       │       │           └── tracing-core feature "once_cell"
+│       │       │               └── tracing-core v0.1.34 (*)
+│       │       └── url feature "default"
+│       │           ├── url v2.5.4
+│       │           │   ├── idna feature "alloc" (*)
+│       │           │   ├── idna feature "compiled_data" (*)
+│       │           │   ├── form_urlencoded feature "alloc"
+│       │           │   │   ├── form_urlencoded v1.2.1
+│       │           │   │   │   └── percent-encoding v2.3.1
+│       │           │   │   └── percent-encoding feature "alloc"
+│       │           │   │       └── percent-encoding v2.3.1
+│       │           │   └── percent-encoding feature "alloc" (*)
+│       │           └── url feature "std"
+│       │               ├── url v2.5.4 (*)
+│       │               ├── idna feature "std" (*)
+│       │               ├── form_urlencoded feature "std"
+│       │               │   ├── form_urlencoded v1.2.1 (*)
+│       │               │   ├── form_urlencoded feature "alloc" (*)
+│       │               │   └── percent-encoding feature "std"
+│       │               │       ├── percent-encoding v2.3.1
+│       │               │       └── percent-encoding feature "alloc" (*)
+│       │               └── percent-encoding feature "std" (*)
+│       ├── hickory-proto feature "tokio-runtime"
+│       │   ├── hickory-proto v0.24.4 (*)
+│       │   ├── tokio feature "net" (*)
+│       │   ├── tokio feature "rt" (*)
+│       │   ├── tokio feature "rt-multi-thread" (*)
+│       │   ├── tokio feature "time"
+│       │   │   └── tokio v1.45.1 (*)
+│       │   └── hickory-proto feature "tokio"
+│       │       └── hickory-proto v0.24.4 (*)
+│       ├── thiserror feature "default" (*)
+│       ├── tracing feature "default" (*)
+│       └── radix_trie feature "default"
+│           └── radix_trie v0.2.1
+│               ├── endian-type feature "default"
+│               │   └── endian-type v0.1.2
+│               └── nibble_vec feature "default"
+│                   └── nibble_vec v0.1.0
+│                       └── smallvec feature "default" (*)
+├── thiserror feature "default" (*)
+├── url feature "default" (*)
+├── percent-encoding feature "default"
+│   ├── percent-encoding v2.3.1
+│   └── percent-encoding feature "std" (*)
+├── hickory-resolver feature "default"
+│   ├── hickory-resolver v0.24.4
+│   │   ├── hickory-proto v0.24.4 (*)
+│   │   ├── cfg-if feature "default" (*)
+│   │   ├── once_cell feature "default" (*)
+│   │   ├── smallvec feature "default" (*)
+│   │   ├── parking_lot feature "default" (*)
+│   │   ├── rand feature "default" (*)
+│   │   ├── futures-util feature "std" (*)
+│   │   ├── tokio feature "default" (*)
+│   │   ├── thiserror feature "default" (*)
+│   │   ├── tracing feature "default" (*)
+│   │   ├── lru-cache feature "default"
+│   │   │   └── lru-cache v0.1.2
+│   │   │       └── linked-hash-map feature "default"
+│   │   │           └── linked-hash-map v0.5.6
+│   │   ├── resolv-conf feature "default"
+│   │   │   └── resolv-conf v0.7.4
+│   │   └── resolv-conf feature "system"
+│   │       └── resolv-conf v0.7.4
+│   ├── hickory-resolver feature "system-config"
+│   │   ├── hickory-resolver v0.24.4 (*)
+│   │   ├── hickory-resolver feature "ipconfig"
+│   │   │   └── hickory-resolver v0.24.4 (*)
+│   │   └── hickory-resolver feature "resolv-conf"
+│   │       └── hickory-resolver v0.24.4 (*)
+│   └── hickory-resolver feature "tokio-runtime"
+│       ├── hickory-resolver v0.24.4 (*)
+│       ├── tokio feature "rt" (*)
+│       ├── hickory-proto feature "tokio-runtime" (*)
+│       └── hickory-resolver feature "tokio"
+│           └── hickory-resolver v0.24.4 (*)
+├── hickory-resolver feature "dnssec-openssl"
+│   ├── hickory-resolver v0.24.4 (*)
+│   ├── hickory-proto feature "dnssec-openssl"
+│   │   ├── hickory-proto v0.24.4 (*)
+│   │   ├── hickory-proto feature "dnssec"
+│   │   │   └── hickory-proto v0.24.4 (*)
+│   │   └── hickory-proto feature "openssl"
+│   │       └── hickory-proto v0.24.4 (*)
+│   └── hickory-resolver feature "dnssec"
+│       └── hickory-resolver v0.24.4 (*)
+├── http feature "default"
+│   ├── http v1.3.1
+│   │   ├── itoa feature "default" (*)
+│   │   ├── bytes feature "default" (*)
+│   │   └── fnv feature "default"
+│   │       ├── fnv v1.0.7
+│   │       └── fnv feature "std"
+│   │           └── fnv v1.0.7
+│   └── http feature "std"
+│       └── http v1.3.1 (*)
+├── hyper feature "default"
+│   └── hyper v1.6.0
+│       ├── futures-util v0.3.31 (*)
+│       ├── itoa feature "default" (*)
+│       ├── smallvec feature "const_generics" (*)
+│       ├── smallvec feature "const_new"
+│       │   ├── smallvec v1.15.1
+│       │   └── smallvec feature "const_generics" (*)
+│       ├── smallvec feature "default" (*)
+│       ├── futures-channel feature "default"
+│       │   ├── futures-channel v0.3.31 (*)
+│       │   └── futures-channel feature "std" (*)
+│       ├── pin-project-lite feature "default" (*)
+│       ├── tokio feature "default" (*)
+│       ├── tokio feature "sync" (*)
+│       ├── bytes feature "default" (*)
+│       ├── http feature "default" (*)
+│       ├── http-body feature "default"
+│       │   └── http-body v1.0.1
+│       │       ├── bytes feature "default" (*)
+│       │       └── http feature "default" (*)
+│       ├── h2 feature "default"
+│       │   └── h2 v0.4.10
+│       │       ├── futures-core v0.3.31
+│       │       ├── futures-sink v0.3.31
+│       │       ├── indexmap feature "default" (*)
+│       │       ├── indexmap feature "std" (*)
+│       │       ├── slab feature "default" (*)
+│       │       ├── tokio feature "default" (*)
+│       │       ├── tokio feature "io-util" (*)
+│       │       ├── bytes feature "default" (*)
+│       │       ├── tokio-util feature "codec"
+│       │       │   └── tokio-util v0.7.15 (*)
+│       │       ├── tokio-util feature "default" (*)
+│       │       ├── tokio-util feature "io"
+│       │       │   └── tokio-util v0.7.15 (*)
+│       │       ├── tracing feature "std" (*)
+│       │       ├── http feature "default" (*)
+│       │       ├── fnv feature "default" (*)
+│       │       └── atomic-waker feature "default"
+│       │           └── atomic-waker v1.1.2
+│       ├── httparse feature "default"
+│       │   ├── httparse v1.10.1
+│       │   └── httparse feature "std"
+│       │       └── httparse v1.10.1
+│       ├── httpdate feature "default"
+│       │   └── httpdate v1.0.3
+│       └── want feature "default"
+│           └── want v0.3.1
+│               └── try-lock feature "default"
+│                   └── try-lock v0.2.5
+├── hyper feature "http1"
+│   └── hyper v1.6.0 (*)
+├── hyper feature "http2"
+│   └── hyper v1.6.0 (*)
+├── hyper-tls feature "default"
+│   └── hyper-tls v0.6.0
+│       ├── tokio feature "default" (*)
+│       ├── bytes feature "default" (*)
+│       ├── http-body-util feature "default"
+│       │   └── http-body-util v0.1.3
+│       │       ├── futures-core v0.3.31
+│       │       ├── pin-project-lite feature "default" (*)
+│       │       ├── bytes feature "default" (*)
+│       │       ├── http feature "default" (*)
+│       │       └── http-body feature "default" (*)
+│       ├── hyper feature "default" (*)
+│       ├── hyper-util feature "client-legacy"
+│       │   ├── hyper-util v0.1.14
+│       │   │   ├── futures-util v0.3.31 (*)
+│       │   │   ├── tokio v1.45.1 (*)
+│       │   │   ├── libc feature "default" (*)
+│       │   │   ├── base64 feature "default" (*)
+│       │   │   ├── futures-channel feature "default" (*)
+│       │   │   ├── futures-core feature "default" (*)
+│       │   │   ├── pin-project-lite feature "default" (*)
+│       │   │   ├── socket2 feature "all" (*)
+│       │   │   ├── socket2 feature "default" (*)
+│       │   │   ├── bytes feature "default" (*)
+│       │   │   ├── ipnet feature "default" (*)
+│       │   │   ├── tracing feature "std" (*)
+│       │   │   ├── percent-encoding feature "default" (*)
+│       │   │   ├── http feature "default" (*)
+│       │   │   ├── http-body feature "default" (*)
+│       │   │   ├── hyper feature "default" (*)
+│       │   │   ├── system-configuration feature "default"
+│       │   │   │   └── system-configuration v0.6.1
+│       │   │   │       ├── bitflags feature "default" (*)
+│       │   │   │       ├── core-foundation feature "default"
+│       │   │   │       │   ├── core-foundation v0.9.4
+│       │   │   │       │   │   ├── core-foundation-sys v0.8.7
+│       │   │   │       │   │   └── libc feature "default" (*)
+│       │   │   │       │   └── core-foundation feature "link"
+│       │   │   │       │       ├── core-foundation v0.9.4 (*)
+│       │   │   │       │       └── core-foundation-sys feature "link"
+│       │   │   │       │           └── core-foundation-sys v0.8.7
+│       │   │   │       └── system-configuration-sys feature "default"
+│       │   │   │           └── system-configuration-sys v0.6.0
+│       │   │   │               ├── libc feature "default" (*)
+│       │   │   │               └── core-foundation-sys feature "default"
+│       │   │   │                   ├── core-foundation-sys v0.8.7
+│       │   │   │                   └── core-foundation-sys feature "link" (*)
+│       │   │   └── tower-service feature "default"
+│       │   │       └── tower-service v0.3.3
+│       │   ├── tokio feature "sync" (*)
+│       │   ├── hyper-util feature "client"
+│       │   │   ├── hyper-util v0.1.14 (*)
+│       │   │   └── hyper feature "client"
+│       │   │       └── hyper v1.6.0 (*)
+│       │   └── hyper-util feature "tokio"
+│       │       ├── hyper-util v0.1.14 (*)
+│       │       ├── tokio feature "net" (*)
+│       │       ├── tokio feature "rt" (*)
+│       │       ├── tokio feature "time" (*)
+│       │       └── hyper-util feature "tokio" (*)
+│       ├── hyper-util feature "default"
+│       │   └── hyper-util v0.1.14 (*)
+│       ├── hyper-util feature "tokio" (*)
+│       ├── tower-service feature "default" (*)
+│       ├── native-tls feature "default"
+│       │   └── native-tls v0.2.14
+│       │       ├── libc feature "default" (*)
+│       │       ├── tempfile feature "default" (*)
+│       │       ├── security-framework feature "default"
+│       │       │   ├── security-framework v2.11.1
+│       │       │   │   ├── security-framework-sys v2.14.0
+│       │       │   │   │   ├── libc feature "default" (*)
+│       │       │   │   │   └── core-foundation-sys feature "default" (*)
+│       │       │   │   ├── libc feature "default" (*)
+│       │       │   │   ├── bitflags feature "default" (*)
+│       │       │   │   ├── core-foundation feature "default" (*)
+│       │       │   │   └── core-foundation-sys feature "default" (*)
+│       │       │   └── security-framework feature "OSX_10_12"
+│       │       │       ├── security-framework v2.11.1 (*)
+│       │       │       ├── security-framework feature "OSX_10_11"
+│       │       │       │   ├── security-framework v2.11.1 (*)
+│       │       │       │   ├── security-framework feature "OSX_10_10"
+│       │       │       │   │   ├── security-framework v2.11.1 (*)
+│       │       │       │   │   ├── security-framework feature "OSX_10_9"
+│       │       │       │   │   │   ├── security-framework v2.11.1 (*)
+│       │       │       │   │   │   └── security-framework-sys feature "OSX_10_9"
+│       │       │       │   │   │       └── security-framework-sys v2.14.0 (*)
+│       │       │       │   │   └── security-framework-sys feature "OSX_10_10"
+│       │       │       │   │       ├── security-framework-sys v2.14.0 (*)
+│       │       │       │   │       └── security-framework-sys feature "OSX_10_9" (*)
+│       │       │       │   └── security-framework-sys feature "OSX_10_11"
+│       │       │       │       ├── security-framework-sys v2.14.0 (*)
+│       │       │       │       └── security-framework-sys feature "OSX_10_10" (*)
+│       │       │       └── security-framework-sys feature "OSX_10_12"
+│       │       │           ├── security-framework-sys v2.14.0 (*)
+│       │       │           └── security-framework-sys feature "OSX_10_11" (*)
+│       │       └── security-framework-sys feature "default"
+│       │           ├── security-framework-sys v2.14.0 (*)
+│       │           └── security-framework-sys feature "OSX_10_12" (*)
+│       └── tokio-native-tls feature "default"
+│           └── tokio-native-tls v0.3.1
+│               ├── tokio feature "default" (*)
+│               └── native-tls feature "default" (*)
+├── reqwest feature "default"
+│   ├── reqwest v0.12.20
+│   │   ├── futures-core v0.3.31
+│   │   ├── futures-util v0.3.31 (*)
+│   │   ├── base64 feature "default" (*)
+│   │   ├── serde feature "default" (*)
+│   │   ├── once_cell feature "default" (*)
+│   │   ├── pin-project-lite feature "default" (*)
+│   │   ├── tokio feature "net" (*)
+│   │   ├── tokio feature "time" (*)
+│   │   ├── bytes feature "default" (*)
+│   │   ├── tokio-util feature "codec" (*)
+│   │   ├── tokio-util feature "io" (*)
+│   │   ├── url feature "default" (*)
+│   │   ├── percent-encoding feature "default" (*)
+│   │   ├── hickory-resolver feature "default" (*)
+│   │   ├── hickory-resolver feature "tokio-runtime" (*)
+│   │   ├── http feature "default" (*)
+│   │   ├── http-body-util feature "default" (*)
+│   │   ├── http-body feature "default" (*)
+│   │   ├── hyper feature "client" (*)
+│   │   ├── hyper feature "default" (*)
+│   │   ├── hyper feature "http1" (*)
+│   │   ├── h2 feature "default" (*)
+│   │   ├── hyper-tls feature "default" (*)
+│   │   ├── hyper-util feature "client" (*)
+│   │   ├── hyper-util feature "client-legacy" (*)
+│   │   ├── hyper-util feature "client-proxy"
+│   │   │   ├── hyper-util v0.1.14 (*)
+│   │   │   └── hyper-util feature "client" (*)
+│   │   ├── hyper-util feature "default" (*)
+│   │   ├── hyper-util feature "http1"
+│   │   │   ├── hyper-util v0.1.14 (*)
+│   │   │   └── hyper feature "http1" (*)
+│   │   ├── hyper-util feature "tokio" (*)
+│   │   ├── tower-service feature "default" (*)
+│   │   ├── native-tls feature "default" (*)
+│   │   ├── tokio-native-tls feature "default" (*)
+│   │   ├── encoding_rs feature "default"
+│   │   │   ├── encoding_rs v0.8.35
+│   │   │   │   └── cfg-if feature "default" (*)
+│   │   │   └── encoding_rs feature "alloc"
+│   │   │       └── encoding_rs v0.8.35 (*)
+│   │   ├── log feature "default"
+│   │   │   └── log v0.4.27
+│   │   ├── mime feature "default"
+│   │   │   └── mime v0.3.17
+│   │   ├── rustls-pki-types feature "default"
+│   │   │   ├── rustls-pki-types v1.12.0
+│   │   │   │   └── zeroize feature "default"
+│   │   │   │       ├── zeroize v1.8.1
+│   │   │   │       └── zeroize feature "alloc"
+│   │   │   │           └── zeroize v1.8.1
+│   │   │   └── rustls-pki-types feature "alloc"
+│   │   │       └── rustls-pki-types v1.12.0 (*)
+│   │   ├── rustls-pki-types feature "std"
+│   │   │   ├── rustls-pki-types v1.12.0 (*)
+│   │   │   └── rustls-pki-types feature "alloc" (*)
+│   │   ├── serde_urlencoded feature "default"
+│   │   │   └── serde_urlencoded v0.7.1
+│   │   │       ├── serde feature "default" (*)
+│   │   │       ├── itoa feature "default" (*)
+│   │   │       ├── ryu feature "default" (*)
+│   │   │       └── form_urlencoded feature "default"
+│   │   │           ├── form_urlencoded v1.2.1 (*)
+│   │   │           └── form_urlencoded feature "std" (*)
+│   │   ├── sync_wrapper feature "default"
+│   │   │   └── sync_wrapper v1.0.2
+│   │   │       └── futures-core v0.3.31
+│   │   ├── sync_wrapper feature "futures"
+│   │   │   ├── sync_wrapper v1.0.2 (*)
+│   │   │   └── sync_wrapper feature "futures-core"
+│   │   │       └── sync_wrapper v1.0.2 (*)
+│   │   ├── tower feature "timeout"
+│   │   │   ├── tower v0.5.2
+│   │   │   │   ├── futures-core feature "default" (*)
+│   │   │   │   ├── futures-util feature "alloc" (*)
+│   │   │   │   ├── pin-project-lite feature "default" (*)
+│   │   │   │   ├── tokio feature "default" (*)
+│   │   │   │   ├── tokio feature "sync" (*)
+│   │   │   │   ├── tower-service feature "default" (*)
+│   │   │   │   ├── sync_wrapper feature "default" (*)
+│   │   │   │   └── tower-layer feature "default"
+│   │   │   │       └── tower-layer v0.3.3
+│   │   │   ├── tokio feature "time" (*)
+│   │   │   ├── tower feature "pin-project-lite"
+│   │   │   │   └── tower v0.5.2 (*)
+│   │   │   └── tower feature "tokio"
+│   │   │       └── tower v0.5.2 (*)
+│   │   ├── tower feature "util"
+│   │   │   ├── tower v0.5.2 (*)
+│   │   │   ├── tower feature "__common"
+│   │   │   │   ├── tower v0.5.2 (*)
+│   │   │   │   ├── tower feature "futures-core"
+│   │   │   │   │   └── tower v0.5.2 (*)
+│   │   │   │   └── tower feature "pin-project-lite" (*)
+│   │   │   ├── tower feature "futures-util"
+│   │   │   │   └── tower v0.5.2 (*)
+│   │   │   ├── tower feature "pin-project-lite" (*)
+│   │   │   └── tower feature "sync_wrapper"
+│   │   │       └── tower v0.5.2 (*)
+│   │   └── tower-http feature "follow-redirect"
+│   │       ├── tower-http v0.6.6
+│   │       │   ├── futures-util v0.3.31 (*)
+│   │       │   ├── bitflags feature "default" (*)
+│   │       │   ├── pin-project-lite feature "default" (*)
+│   │       │   ├── bytes feature "default" (*)
+│   │       │   ├── http feature "default" (*)
+│   │       │   ├── http-body feature "default" (*)
+│   │       │   ├── tower-service feature "default" (*)
+│   │       │   ├── tower feature "default"
+│   │       │   │   └── tower v0.5.2 (*)
+│   │       │   ├── tower-layer feature "default" (*)
+│   │       │   └── iri-string feature "default"
+│   │       │       ├── iri-string v0.7.8
+│   │       │       └── iri-string feature "std"
+│   │       │           ├── iri-string v0.7.8
+│   │       │           └── iri-string feature "alloc"
+│   │       │               └── iri-string v0.7.8
+│   │       ├── tower feature "util" (*)
+│   │       ├── tower-http feature "futures-util"
+│   │       │   └── tower-http v0.6.6 (*)
+│   │       ├── tower-http feature "iri-string"
+│   │       │   └── tower-http v0.6.6 (*)
+│   │       └── tower-http feature "tower"
+│   │           └── tower-http v0.6.6 (*)
+│   ├── reqwest feature "charset"
+│   │   └── reqwest v0.12.20 (*)
+│   ├── reqwest feature "default-tls"
+│   │   ├── reqwest v0.12.20 (*)
+│   │   └── reqwest feature "__tls"
+│   │       ├── reqwest v0.12.20 (*)
+│   │       └── tokio feature "io-util" (*)
+│   ├── reqwest feature "http2"
+│   │   ├── reqwest v0.12.20 (*)
+│   │   ├── hyper feature "http2" (*)
+│   │   ├── hyper-util feature "http2"
+│   │   │   ├── hyper-util v0.1.14 (*)
+│   │   │   └── hyper feature "http2" (*)
+│   │   └── reqwest feature "h2"
+│   │       └── reqwest v0.12.20 (*)
+│   └── reqwest feature "system-proxy"
+│       ├── reqwest v0.12.20 (*)
+│       └── hyper-util feature "client-proxy-system"
+│           └── hyper-util v0.1.14 (*)
+└── z-base-32 feature "default"
+    └── z-base-32 v0.1.4
+[dev-dependencies]
+├── rand feature "getrandom" (*)
+├── tempfile feature "default" (*)
+├── bytes feature "default" (*)
+├── http-body-util feature "default" (*)
+├── hyper feature "default" (*)
+├── hyper feature "server"
+│   └── hyper v1.6.0 (*)
+├── hyper-util feature "default" (*)
+├── hyper-util feature "full"
+│   ├── hyper-util v0.1.14 (*)
+│   ├── hyper-util feature "client" (*)
+│   ├── hyper-util feature "client-legacy" (*)
+│   ├── hyper-util feature "http1" (*)
+│   ├── hyper-util feature "http2" (*)
+│   ├── hyper-util feature "server"
+│   │   ├── hyper-util v0.1.14 (*)
+│   │   └── hyper feature "server" (*)
+│   ├── hyper-util feature "server-auto"
+│   │   ├── hyper-util v0.1.14 (*)
+│   │   ├── hyper-util feature "http1" (*)
+│   │   ├── hyper-util feature "http2" (*)
+│   │   └── hyper-util feature "server" (*)
+│   ├── hyper-util feature "server-graceful"
+│   │   ├── hyper-util v0.1.14 (*)
+│   │   ├── tokio feature "sync" (*)
+│   │   ├── hyper-util feature "server" (*)
+│   │   └── hyper-util feature "tokio" (*)
+│   ├── hyper-util feature "service"
+│   │   └── hyper-util v0.1.14 (*)
+│   ├── hyper-util feature "tokio" (*)
+│   └── hyper-util feature "tracing"
+│       └── hyper-util v0.1.14 (*)
+├── reqwest feature "default" (*)
+└── reqwest feature "socks"
+    └── reqwest v0.12.20 (*)
+
+sequoia-openpgp v2.0.0 (/Users/thor3/Documents/loveit/openpgp) (*)
+
+sequoia-sq v1.3.1 (/Users/thor3/Documents/loveit/sequoia-sq)
+├── clap_lex v0.7.5
+├── sequoia-autocrypt v0.26.0
+│   ├── sequoia-openpgp v2.0.0
+│   │   ├── buffered-reader v1.4.0
+│   │   │   ├── bzip2 feature "default" (*)
+│   │   │   ├── flate2 feature "default" (*)
+│   │   │   └── libc feature "default" (*)
+│   │   ├── memsec v0.7.0
+│   │   ├── libc feature "default" (*)
+│   │   ├── base64 feature "default" (*)
+│   │   ├── anyhow feature "default" (*)
+│   │   ├── argon2 feature "default" (*)
+│   │   ├── regex feature "default" (*)
+│   │   ├── regex-syntax feature "default" (*)
+│   │   ├── dyn-clone feature "default" (*)
+│   │   ├── idna feature "default" (*)
+│   │   ├── lalrpop-util feature "default" (*)
+│   │   ├── sha1collisiondetection feature "std" (*)
+│   │   ├── xxhash-rust feature "default" (*)
+│   │   ├── xxhash-rust feature "xxh3" (*)
+│   │   └── thiserror feature "default" (*)
+│   │   [build-dependencies]
+│   │   └── lalrpop v0.20.2 (*)
+│   └── base64 feature "default" (*)
+├── sequoia-cert-store v0.7.0
+│   ├── openpgp-cert-d v0.3.4
+│   │   ├── dirs v6.0.0
+│   │   │   └── dirs-sys feature "default"
+│   │   │       └── dirs-sys v0.5.0
+│   │   │           ├── libc feature "default" (*)
+│   │   │           └── option-ext feature "default" (*)
+│   │   ├── fd-lock v4.0.4
+│   │   │   ├── cfg-if feature "default" (*)
+│   │   │   ├── rustix feature "default" (*)
+│   │   │   └── rustix feature "fs" (*)
+│   │   ├── sha1collisiondetection v0.3.4 (*)
+│   │   ├── tempfile v3.20.0 (*)
+│   │   ├── thiserror v2.0.12 (*)
+│   │   ├── walkdir v2.5.0 (*)
+│   │   ├── libc feature "default" (*)
+│   │   ├── anyhow feature "std" (*)
+│   │   └── sha2 feature "std"
+│   │       ├── sha2 v0.10.9
+│   │       │   ├── cfg-if feature "default" (*)
+│   │       │   ├── digest feature "default" (*)
+│   │       │   └── cpufeatures feature "default"
+│   │       │       └── cpufeatures v0.2.17
+│   │       │           └── libc v0.2.173
+│   │       └── digest feature "std"
+│   │           ├── digest v0.10.7 (*)
+│   │           ├── digest feature "alloc"
+│   │           │   └── digest v0.10.7 (*)
+│   │           └── crypto-common feature "std"
+│   │               └── crypto-common v0.1.6 (*)
+│   ├── sequoia-openpgp v2.0.0 (*)
+│   ├── anyhow feature "default" (*)
+│   ├── rayon feature "default" (*)
+│   ├── smallvec feature "default" (*)
+│   ├── thiserror feature "default" (*)
+│   ├── dirs feature "default" (*)
+│   ├── url feature "default" (*)
+│   ├── gethostname feature "default"
+│   │   └── gethostname v0.5.0
+│   │       └── rustix feature "system"
+│   │           └── rustix v0.38.44
+│   │               ├── bitflags v2.9.1
+│   │               ├── errno v0.3.12 (*)
+│   │               └── libc v0.2.173
+│   ├── rusqlite feature "blob"
+│   │   └── rusqlite v0.32.1
+│   │       ├── bitflags feature "default" (*)
+│   │       ├── smallvec feature "default" (*)
+│   │       ├── fallible-iterator feature "default"
+│   │       │   ├── fallible-iterator v0.3.0
+│   │       │   └── fallible-iterator feature "alloc"
+│   │       │       └── fallible-iterator v0.3.0
+│   │       ├── fallible-streaming-iterator feature "default"
+│   │       │   └── fallible-streaming-iterator v0.1.9
+│   │       ├── hashlink feature "default"
+│   │       │   └── hashlink v0.9.1
+│   │       │       ├── hashbrown feature "ahash"
+│   │       │       │   └── hashbrown v0.14.5
+│   │       │       │       └── ahash v0.8.12
+│   │       │       │           ├── cfg-if feature "default" (*)
+│   │       │       │           ├── once_cell feature "alloc" (*)
+│   │       │       │           └── zerocopy feature "simd" (*)
+│   │       │       │           [build-dependencies]
+│   │       │       │           └── version_check feature "default" (*)
+│   │       │       └── hashbrown feature "inline-more"
+│   │       │           └── hashbrown v0.14.5 (*)
+│   │       └── libsqlite3-sys feature "default"
+│   │           ├── libsqlite3-sys v0.30.1
+│   │           │   [build-dependencies]
+│   │           │   ├── pkg-config feature "default" (*)
+│   │           │   └── vcpkg feature "default" (*)
+│   │           └── libsqlite3-sys feature "min_sqlite_version_3_14_0"
+│   │               ├── libsqlite3-sys v0.30.1 (*)
+│   │               ├── libsqlite3-sys feature "pkg-config"
+│   │               │   └── libsqlite3-sys v0.30.1 (*)
+│   │               └── libsqlite3-sys feature "vcpkg"
+│   │                   └── libsqlite3-sys v0.30.1 (*)
+│   ├── rusqlite feature "collation"
+│   │   └── rusqlite v0.32.1 (*)
+│   ├── rusqlite feature "default"
+│   │   └── rusqlite v0.32.1 (*)
+│   ├── rusqlite feature "trace"
+│   │   └── rusqlite v0.32.1 (*)
+│   ├── crossbeam feature "default"
+│   │   ├── crossbeam v0.8.4
+│   │   │   ├── crossbeam-channel v0.5.15
+│   │   │   │   └── crossbeam-utils v0.8.21
+│   │   │   ├── crossbeam-deque v0.8.6 (*)
+│   │   │   ├── crossbeam-epoch v0.9.18 (*)
+│   │   │   ├── crossbeam-queue v0.3.12
+│   │   │   │   └── crossbeam-utils v0.8.21
+│   │   │   └── crossbeam-utils v0.8.21
+│   │   └── crossbeam feature "std"
+│   │       ├── crossbeam v0.8.4 (*)
+│   │       ├── crossbeam-deque feature "std" (*)
+│   │       ├── crossbeam-epoch feature "std" (*)
+│   │       ├── crossbeam-utils feature "std" (*)
+│   │       ├── crossbeam feature "alloc"
+│   │       │   ├── crossbeam v0.8.4 (*)
+│   │       │   ├── crossbeam-epoch feature "alloc" (*)
+│   │       │   ├── crossbeam feature "crossbeam-epoch"
+│   │       │   │   └── crossbeam v0.8.4 (*)
+│   │       │   ├── crossbeam feature "crossbeam-queue"
+│   │       │   │   └── crossbeam v0.8.4 (*)
+│   │       │   └── crossbeam-queue feature "alloc"
+│   │       │       └── crossbeam-queue v0.3.12 (*)
+│   │       ├── crossbeam feature "crossbeam-channel"
+│   │       │   └── crossbeam v0.8.4 (*)
+│   │       ├── crossbeam feature "crossbeam-deque"
+│   │       │   └── crossbeam v0.8.4 (*)
+│   │       ├── crossbeam feature "crossbeam-epoch" (*)
+│   │       ├── crossbeam feature "crossbeam-queue" (*)
+│   │       ├── crossbeam-channel feature "std"
+│   │       │   ├── crossbeam-channel v0.5.15 (*)
+│   │       │   └── crossbeam-utils feature "std" (*)
+│   │       └── crossbeam-queue feature "std"
+│   │           ├── crossbeam-queue v0.3.12 (*)
+│   │           ├── crossbeam-utils feature "std" (*)
+│   │           └── crossbeam-queue feature "alloc" (*)
+│   └── num_cpus feature "default"
+│       └── num_cpus v1.17.0
+│           └── libc feature "default" (*)
+├── sequoia-ipc v0.36.0
+│   ├── memsec v0.7.0
+│   ├── sequoia-openpgp v2.0.0 (*)
+│   ├── libc feature "default" (*)
+│   ├── anyhow feature "default" (*)
+│   ├── lalrpop-util feature "default" (*)
+│   ├── rand feature "default" (*)
+│   ├── thiserror feature "default" (*)
+│   ├── capnp-rpc feature "default" (*)
+│   ├── dirs feature "default" (*)
+│   ├── fs2 feature "default" (*)
+│   ├── socket2 feature "default" (*)
+│   ├── tempfile feature "default" (*)
+│   ├── tokio feature "default" (*)
+│   ├── tokio feature "io-util" (*)
+│   ├── tokio feature "net" (*)
+│   ├── tokio feature "rt-multi-thread" (*)
+│   ├── tokio-util feature "compat" (*)
+│   └── tokio-util feature "default" (*)
+│   [build-dependencies]
+│   └── lalrpop v0.20.2 (*)
+├── sequoia-net v0.30.0
+│   ├── sequoia-openpgp v2.0.0 (*)
+│   ├── libc feature "default" (*)
+│   ├── base64 feature "default" (*)
+│   ├── anyhow feature "default" (*)
+│   ├── hickory-client feature "default" (*)
+│   ├── thiserror feature "default" (*)
+│   ├── url feature "default" (*)
+│   ├── percent-encoding feature "default" (*)
+│   ├── hickory-resolver feature "default" (*)
+│   ├── hickory-resolver feature "dnssec-openssl" (*)
+│   ├── http feature "default" (*)
+│   ├── hyper-tls feature "default" (*)
+│   ├── z-base-32 feature "default" (*)
+│   ├── futures-util feature "default"
+│   │   ├── futures-util v0.3.31
+│   │   │   ├── futures-core v0.3.31
+│   │   │   ├── futures-macro v0.3.31 (proc-macro) (*)
+│   │   │   ├── futures-task v0.3.31
+│   │   │   ├── pin-project-lite feature "default" (*)
+│   │   │   ├── pin-utils feature "default" (*)
+│   │   │   └── slab feature "default" (*)
+│   │   ├── futures-util feature "async-await"
+│   │   │   └── futures-util v0.3.31 (*)
+│   │   ├── futures-util feature "async-await-macro"
+│   │   │   ├── futures-util v0.3.31 (*)
+│   │   │   ├── futures-util feature "async-await" (*)
+│   │   │   └── futures-util feature "futures-macro"
+│   │   │       └── futures-util v0.3.31 (*)
+│   │   └── futures-util feature "std"
+│   │       ├── futures-util v0.3.31 (*)
+│   │       ├── futures-core feature "std" (*)
+│   │       ├── futures-task feature "std" (*)
+│   │       ├── futures-util feature "alloc"
+│   │       │   ├── futures-util v0.3.31 (*)
+│   │       │   ├── futures-core feature "alloc" (*)
+│   │       │   └── futures-task feature "alloc" (*)
+│   │       └── futures-util feature "slab"
+│   │           └── futures-util v0.3.31 (*)
+│   ├── hyper feature "default"
+│   │   └── hyper v1.6.0
+│   │       ├── futures-util v0.3.31 (*)
+│   │       ├── itoa feature "default" (*)
+│   │       ├── smallvec feature "const_generics" (*)
+│   │       ├── smallvec feature "const_new" (*)
+│   │       ├── smallvec feature "default" (*)
+│   │       ├── pin-project-lite feature "default" (*)
+│   │       ├── bytes feature "default" (*)
+│   │       ├── http feature "default" (*)
+│   │       ├── http-body feature "default" (*)
+│   │       ├── h2 feature "default" (*)
+│   │       ├── httparse feature "default" (*)
+│   │       ├── want feature "default" (*)
+│   │       ├── futures-channel feature "default"
+│   │       │   ├── futures-channel v0.3.31
+│   │       │   │   └── futures-core v0.3.31
+│   │       │   └── futures-channel feature "std"
+│   │       │       ├── futures-channel v0.3.31 (*)
+│   │       │       ├── futures-core feature "std" (*)
+│   │       │       └── futures-channel feature "alloc"
+│   │       │           ├── futures-channel v0.3.31 (*)
+│   │       │           └── futures-core feature "alloc" (*)
+│   │       ├── tokio feature "default"
+│   │       │   └── tokio v1.45.1
+│   │       │       ├── mio v1.0.4 (*)
+│   │       │       ├── libc feature "default" (*)
+│   │       │       ├── pin-project-lite feature "default" (*)
+│   │       │       ├── socket2 feature "all" (*)
+│   │       │       ├── socket2 feature "default" (*)
+│   │       │       ├── bytes feature "default" (*)
+│   │       │       └── tokio-macros feature "default" (*)
+│   │       └── tokio feature "sync"
+│   │           └── tokio v1.45.1 (*)
+│   ├── hyper feature "http1"
+│   │   └── hyper v1.6.0 (*)
+│   ├── hyper feature "http2"
+│   │   └── hyper v1.6.0 (*)
+│   ├── tokio feature "default" (*)
+│   ├── tokio feature "macros"
+│   │   ├── tokio v1.45.1 (*)
+│   │   └── tokio feature "tokio-macros"
+│   │       └── tokio v1.45.1 (*)
+│   └── reqwest feature "default"
+│       ├── reqwest v0.12.20
+│       │   ├── futures-core v0.3.31
+│       │   ├── base64 feature "default" (*)
+│       │   ├── log feature "default" (*)
+│       │   ├── pin-project-lite feature "default" (*)
+│       │   ├── bytes feature "default" (*)
+│       │   ├── url feature "default" (*)
+│       │   ├── percent-encoding feature "default" (*)
+│       │   ├── http feature "default" (*)
+│       │   ├── http-body-util feature "default" (*)
+│       │   ├── http-body feature "default" (*)
+│       │   ├── h2 feature "default" (*)
+│       │   ├── hyper-tls feature "default" (*)
+│       │   ├── tower-service feature "default" (*)
+│       │   ├── native-tls feature "default" (*)
+│       │   ├── tokio-native-tls feature "default" (*)
+│       │   ├── encoding_rs feature "default" (*)
+│       │   ├── mime feature "default" (*)
+│       │   ├── rustls-pki-types feature "default" (*)
+│       │   ├── rustls-pki-types feature "std" (*)
+│       │   ├── serde_urlencoded feature "default" (*)
+│       │   ├── sync_wrapper feature "default" (*)
+│       │   ├── sync_wrapper feature "futures" (*)
+│       │   ├── tower feature "timeout" (*)
+│       │   ├── tower feature "util" (*)
+│       │   ├── tower-http feature "follow-redirect" (*)
+│       │   ├── hyper feature "client"
+│       │   │   └── hyper v1.6.0 (*)
+│       │   ├── hyper feature "default" (*)
+│       │   ├── hyper feature "http1" (*)
+│       │   ├── tokio feature "net"
+│       │   │   ├── tokio v1.45.1 (*)
+│       │   │   ├── mio feature "net" (*)
+│       │   │   ├── mio feature "os-ext" (*)
+│       │   │   ├── mio feature "os-poll" (*)
+│       │   │   ├── tokio feature "libc"
+│       │   │   │   └── tokio v1.45.1 (*)
+│       │   │   ├── tokio feature "mio"
+│       │   │   │   └── tokio v1.45.1 (*)
+│       │   │   └── tokio feature "socket2"
+│       │   │       └── tokio v1.45.1 (*)
+│       │   ├── tokio feature "time"
+│       │   │   └── tokio v1.45.1 (*)
+│       │   ├── hyper-util feature "client"
+│       │   │   ├── hyper-util v0.1.14
+│       │   │   │   ├── futures-util v0.3.31 (*)
+│       │   │   │   ├── tokio v1.45.1 (*)
+│       │   │   │   ├── libc feature "default" (*)
+│       │   │   │   ├── base64 feature "default" (*)
+│       │   │   │   ├── futures-core feature "default" (*)
+│       │   │   │   ├── pin-project-lite feature "default" (*)
+│       │   │   │   ├── socket2 feature "all" (*)
+│       │   │   │   ├── socket2 feature "default" (*)
+│       │   │   │   ├── bytes feature "default" (*)
+│       │   │   │   ├── ipnet feature "default" (*)
+│       │   │   │   ├── tracing feature "std" (*)
+│       │   │   │   ├── percent-encoding feature "default" (*)
+│       │   │   │   ├── http feature "default" (*)
+│       │   │   │   ├── http-body feature "default" (*)
+│       │   │   │   ├── system-configuration feature "default" (*)
+│       │   │   │   ├── tower-service feature "default" (*)
+│       │   │   │   ├── hyper feature "default" (*)
+│       │   │   │   └── futures-channel feature "default" (*)
+│       │   │   └── hyper feature "client" (*)
+│       │   ├── hyper-util feature "client-legacy"
+│       │   │   ├── hyper-util v0.1.14 (*)
+│       │   │   ├── tokio feature "sync" (*)
+│       │   │   ├── hyper-util feature "client" (*)
+│       │   │   └── hyper-util feature "tokio"
+│       │   │       ├── hyper-util v0.1.14 (*)
+│       │   │       ├── tokio feature "net" (*)
+│       │   │       ├── tokio feature "rt"
+│       │   │       │   └── tokio v1.45.1 (*)
+│       │   │       ├── tokio feature "time" (*)
+│       │   │       └── hyper-util feature "tokio" (*)
+│       │   ├── hyper-util feature "client-proxy"
+│       │   │   ├── hyper-util v0.1.14 (*)
+│       │   │   └── hyper-util feature "client" (*)
+│       │   ├── hyper-util feature "default"
+│       │   │   └── hyper-util v0.1.14 (*)
+│       │   ├── hyper-util feature "http1"
+│       │   │   ├── hyper-util v0.1.14 (*)
+│       │   │   └── hyper feature "http1" (*)
+│       │   ├── hyper-util feature "tokio" (*)
+│       │   └── serde feature "default"
+│       │       ├── serde v1.0.219
+│       │       │   └── serde_derive feature "default" (*)
+│       │       └── serde feature "std"
+│       │           └── serde v1.0.219 (*)
+│       ├── reqwest feature "charset"
+│       │   └── reqwest v0.12.20 (*)
+│       ├── reqwest feature "default-tls"
+│       │   ├── reqwest v0.12.20 (*)
+│       │   └── reqwest feature "__tls"
+│       │       ├── reqwest v0.12.20 (*)
+│       │       └── tokio feature "io-util"
+│       │           ├── tokio v1.45.1 (*)
+│       │           └── tokio feature "bytes"
+│       │               └── tokio v1.45.1 (*)
+│       ├── reqwest feature "http2"
+│       │   ├── reqwest v0.12.20 (*)
+│       │   ├── hyper feature "http2" (*)
+│       │   ├── reqwest feature "h2"
+│       │   │   └── reqwest v0.12.20 (*)
+│       │   └── hyper-util feature "http2"
+│       │       ├── hyper-util v0.1.14 (*)
+│       │       └── hyper feature "http2" (*)
+│       └── reqwest feature "system-proxy"
+│           ├── reqwest v0.12.20 (*)
+│           └── hyper-util feature "client-proxy-system"
+│               └── hyper-util v0.1.14 (*)
+├── sequoia-wot v0.14.0
+│   ├── sequoia-cert-store v0.7.0 (*)
+│   ├── sequoia-openpgp v2.0.0 (*)
+│   ├── anyhow feature "default" (*)
+│   ├── thiserror feature "default" (*)
+│   ├── chrono feature "default"
+│   │   ├── chrono v0.4.41
+│   │   │   ├── num-traits v0.2.19
+│   │   │   │   [build-dependencies]
+│   │   │   │   └── autocfg feature "default" (*)
+│   │   │   ├── iana-time-zone feature "default"
+│   │   │   │   └── iana-time-zone v0.1.63
+│   │   │   │       └── core-foundation-sys feature "default" (*)
+│   │   │   └── iana-time-zone feature "fallback"
+│   │   │       └── iana-time-zone v0.1.63 (*)
+│   │   ├── chrono feature "clock"
+│   │   │   ├── chrono v0.4.41 (*)
+│   │   │   ├── chrono feature "android-tzdata"
+│   │   │   │   └── chrono v0.4.41 (*)
+│   │   │   ├── chrono feature "iana-time-zone"
+│   │   │   │   └── chrono v0.4.41 (*)
+│   │   │   ├── chrono feature "now"
+│   │   │   │   ├── chrono v0.4.41 (*)
+│   │   │   │   └── chrono feature "std"
+│   │   │   │       ├── chrono v0.4.41 (*)
+│   │   │   │       └── chrono feature "alloc"
+│   │   │   │           └── chrono v0.4.41 (*)
+│   │   │   └── chrono feature "winapi"
+│   │   │       ├── chrono v0.4.41 (*)
+│   │   │       └── chrono feature "windows-link"
+│   │   │           └── chrono v0.4.41 (*)
+│   │   ├── chrono feature "oldtime"
+│   │   │   └── chrono v0.4.41 (*)
+│   │   ├── chrono feature "std" (*)
+│   │   └── chrono feature "wasmbind"
+│   │       ├── chrono v0.4.41 (*)
+│   │       ├── chrono feature "js-sys"
+│   │       │   └── chrono v0.4.41 (*)
+│   │       └── chrono feature "wasm-bindgen"
+│   │           └── chrono v0.4.41 (*)
+│   ├── crossbeam feature "default" (*)
+│   └── num_cpus feature "default" (*)
+├── sequoia-openpgp feature "crypto-openssl" (*)
+├── anyhow feature "default" (*)
+├── typenum feature "default" (*)
+├── serde feature "default" (*)
+├── serde feature "derive" (*)
+├── clap feature "default" (*)
+├── clap feature "derive" (*)
+├── clap feature "env"
+│   ├── clap v4.5.40 (*)
+│   └── clap_builder feature "env"
+│       └── clap_builder v4.5.40 (*)
+├── clap feature "string"
+│   ├── clap v4.5.40 (*)
+│   └── clap_builder feature "string"
+│       └── clap_builder v4.5.40 (*)
+├── clap feature "wrap_help"
+│   ├── clap v4.5.40 (*)
+│   └── clap_builder feature "wrap_help"
+│       ├── clap_builder v4.5.40 (*)
+│       └── clap_builder feature "help" (*)
+├── terminal_size feature "default" (*)
+├── once_cell feature "default" (*)
+├── regex feature "default" (*)
+├── aho-corasick feature "default"
+│   ├── aho-corasick v1.1.3 (*)
+│   ├── aho-corasick feature "perf-literal" (*)
+│   └── aho-corasick feature "std" (*)
+├── rpassword feature "default" (*)
+├── thiserror feature "default" (*)
+├── futures-util feature "default" (*)
+├── dirs feature "default" (*)
+├── tempfile feature "default" (*)
+├── tokio feature "default" (*)
+├── openssl feature "default" (*)
+├── reqwest feature "default" (*)
+├── reqwest feature "hickory-dns"
+│   └── reqwest v0.12.20 (*)
+├── reqwest feature "stream"
+│   ├── reqwest v0.12.20 (*)
+│   └── tokio feature "fs"
+│       └── tokio v1.45.1 (*)
+├── buffered-reader feature "compression"
+│   ├── buffered-reader v1.4.0 (*)
+│   ├── buffered-reader feature "compression-bzip2"
+│   │   ├── buffered-reader v1.4.0 (*)
+│   │   └── buffered-reader feature "bzip2"
+│   │       └── buffered-reader v1.4.0 (*)
+│   └── buffered-reader feature "compression-deflate"
+│       ├── buffered-reader v1.4.0 (*)
+│       └── buffered-reader feature "flate2"
+│           └── buffered-reader v1.4.0 (*)
+├── chrono feature "default" (*)
+├── filetime feature "default"
+│   └── filetime v0.2.25
+│       ├── cfg-if feature "default" (*)
+│       └── libc feature "default" (*)
+├── fs_extra feature "default"
+│   └── fs_extra v1.3.0
+├── gethostname feature "default" (*)
+├── humantime feature "default"
+│   └── humantime v2.2.0
+├── indicatif feature "default"
+│   ├── indicatif v0.17.11
+│   │   ├── console feature "ansi-parsing"
+│   │   │   └── console v0.15.11
+│   │   │       ├── libc feature "default" (*)
+│   │   │       ├── once_cell feature "default" (*)
+│   │   │       └── unicode-width feature "default"
+│   │   │           ├── unicode-width v0.2.1
+│   │   │           └── unicode-width feature "cjk"
+│   │   │               └── unicode-width v0.2.1
+│   │   ├── unicode-width feature "default" (*)
+│   │   ├── number_prefix feature "default"
+│   │   │   ├── number_prefix v0.4.0
+│   │   │   └── number_prefix feature "std"
+│   │   │       └── number_prefix v0.4.0
+│   │   └── portable-atomic feature "default"
+│   │       ├── portable-atomic v1.11.1
+│   │       └── portable-atomic feature "fallback"
+│   │           └── portable-atomic v1.11.1
+│   ├── indicatif feature "unicode-width"
+│   │   └── indicatif v0.17.11 (*)
+│   └── console feature "unicode-width"
+│       └── console v0.15.11 (*)
+├── rusqlite feature "default" (*)
+├── sequoia-keystore feature "default"
+│   ├── sequoia-keystore v0.7.0
+│   │   ├── sequoia-ipc v0.36.0 (*)
+│   │   ├── sequoia-openpgp v2.0.0 (*)
+│   │   ├── anyhow feature "default" (*)
+│   │   ├── thiserror feature "default" (*)
+│   │   ├── capnp feature "default" (*)
+│   │   ├── dirs feature "default" (*)
+│   │   ├── tokio feature "default" (*)
+│   │   ├── tokio feature "io-std"
+│   │   │   └── tokio v1.45.1 (*)
+│   │   ├── tokio feature "macros" (*)
+│   │   ├── tokio feature "net" (*)
+│   │   ├── tokio feature "rt" (*)
+│   │   ├── tokio-util feature "compat" (*)
+│   │   ├── tokio-util feature "default" (*)
+│   │   ├── log feature "default" (*)
+│   │   ├── sequoia-directories feature "default"
+│   │   │   └── sequoia-directories v0.1.0
+│   │   │       ├── anyhow feature "default" (*)
+│   │   │       ├── same-file feature "default" (*)
+│   │   │       ├── tempfile feature "default" (*)
+│   │   │       ├── thiserror feature "default" (*)
+│   │   │       └── directories feature "default"
+│   │   │           └── directories v5.0.1
+│   │   │               └── dirs-sys feature "default" (*)
+│   │   ├── async-generic feature "default"
+│   │   │   └── async-generic v1.1.2 (proc-macro)
+│   │   │       ├── proc-macro2 feature "default" (*)
+│   │   │       ├── quote feature "default" (*)
+│   │   │       ├── syn feature "default" (*)
+│   │   │       ├── syn feature "full" (*)
+│   │   │       └── syn feature "visit-mut" (*)
+│   │   ├── env_logger feature "default"
+│   │   │   ├── env_logger v0.11.8
+│   │   │   │   ├── env_filter v0.1.3
+│   │   │   │   │   ├── regex feature "perf" (*)
+│   │   │   │   │   ├── regex feature "std" (*)
+│   │   │   │   │   ├── log feature "default" (*)
+│   │   │   │   │   └── log feature "std"
+│   │   │   │   │       └── log v0.4.27
+│   │   │   │   ├── anstream feature "wincon" (*)
+│   │   │   │   ├── anstyle feature "default" (*)
+│   │   │   │   ├── log feature "default" (*)
+│   │   │   │   ├── log feature "std" (*)
+│   │   │   │   └── jiff feature "std"
+│   │   │   │       ├── jiff v0.2.15
+│   │   │   │       └── jiff feature "alloc"
+│   │   │   │           └── jiff v0.2.15
+│   │   │   ├── env_logger feature "auto-color"
+│   │   │   │   ├── env_logger v0.11.8 (*)
+│   │   │   │   ├── anstream feature "auto" (*)
+│   │   │   │   ├── env_logger feature "anstream"
+│   │   │   │   │   └── env_logger v0.11.8 (*)
+│   │   │   │   └── env_logger feature "color"
+│   │   │   │       └── env_logger v0.11.8 (*)
+│   │   │   ├── env_logger feature "humantime"
+│   │   │   │   └── env_logger v0.11.8 (*)
+│   │   │   └── env_logger feature "regex"
+│   │   │       ├── env_logger v0.11.8 (*)
+│   │   │       └── env_filter feature "regex"
+│   │   │           └── env_filter v0.1.3 (*)
+│   │   ├── paste feature "default"
+│   │   │   └── paste v1.0.15 (proc-macro)
+│   │   ├── sequoia-keystore-backend feature "default"
+│   │   │   └── sequoia-keystore-backend v0.7.0
+│   │   │       ├── sequoia-openpgp v2.0.0 (*)
+│   │   │       ├── anyhow feature "default" (*)
+│   │   │       ├── thiserror feature "default" (*)
+│   │   │       ├── futures feature "default"
+│   │   │       │   ├── futures v0.3.31 (*)
+│   │   │       │   ├── futures feature "async-await"
+│   │   │       │   │   ├── futures v0.3.31 (*)
+│   │   │       │   │   ├── futures-util feature "async-await" (*)
+│   │   │       │   │   └── futures-util feature "async-await-macro" (*)
+│   │   │       │   ├── futures feature "executor"
+│   │   │       │   │   ├── futures v0.3.31 (*)
+│   │   │       │   │   ├── futures feature "futures-executor"
+│   │   │       │   │   │   └── futures v0.3.31 (*)
+│   │   │       │   │   ├── futures feature "std" (*)
+│   │   │       │   │   └── futures-executor feature "std"
+│   │   │       │   │       ├── futures-executor v0.3.31 (*)
+│   │   │       │   │       ├── futures-core feature "std" (*)
+│   │   │       │   │       ├── futures-task feature "std" (*)
+│   │   │       │   │       └── futures-util feature "std" (*)
+│   │   │       │   └── futures feature "std" (*)
+│   │   │       ├── futures feature "executor" (*)
+│   │   │       ├── tempfile feature "default" (*)
+│   │   │       ├── tokio feature "default" (*)
+│   │   │       ├── tokio feature "io-util" (*)
+│   │   │       ├── tokio feature "macros" (*)
+│   │   │       ├── tokio feature "net" (*)
+│   │   │       ├── tokio feature "rt-multi-thread" (*)
+│   │   │       ├── async-trait feature "default" (*)
+│   │   │       ├── log feature "default" (*)
+│   │   │       └── env_logger feature "default" (*)
+│   │   ├── sequoia-keystore-gpg-agent feature "default"
+│   │   │   └── sequoia-keystore-gpg-agent v0.5.0
+│   │   │       ├── openpgp-cert-d v0.3.4 (*)
+│   │   │       ├── sequoia-gpg-agent v0.6.1
+│   │   │       │   ├── sequoia-ipc v0.36.0 (*)
+│   │   │       │   ├── sequoia-openpgp v2.0.0 (*)
+│   │   │       │   ├── libc feature "default" (*)
+│   │   │       │   ├── anyhow feature "default" (*)
+│   │   │       │   ├── thiserror feature "default" (*)
+│   │   │       │   ├── futures feature "default" (*)
+│   │   │       │   ├── tempfile feature "default" (*)
+│   │   │       │   ├── tokio feature "rt" (*)
+│   │   │       │   ├── chrono feature "default" (*)
+│   │   │       │   ├── lalrpop-util feature "default"
+│   │   │       │   │   ├── lalrpop-util v0.22.2
+│   │   │       │   │   │   ├── regex-automata feature "hybrid" (*)
+│   │   │       │   │   │   ├── regex-automata feature "perf-inline" (*)
+│   │   │       │   │   │   ├── regex-automata feature "perf-literal-substring" (*)
+│   │   │       │   │   │   ├── regex-automata feature "syntax" (*)
+│   │   │       │   │   │   └── rustversion feature "default"
+│   │   │       │   │   │       └── rustversion v1.0.21 (proc-macro)
+│   │   │       │   │   ├── lalrpop-util feature "std"
+│   │   │       │   │   │   ├── lalrpop-util v0.22.2 (*)
+│   │   │       │   │   │   ├── regex-automata feature "perf"
+│   │   │       │   │   │   │   ├── regex-automata v0.4.9 (*)
+│   │   │       │   │   │   │   ├── regex-automata feature "perf-inline" (*)
+│   │   │       │   │   │   │   └── regex-automata feature "perf-literal" (*)
+│   │   │       │   │   │   └── lalrpop-util feature "regex-automata"
+│   │   │       │   │   │       └── lalrpop-util v0.22.2 (*)
+│   │   │       │   │   └── lalrpop-util feature "unicode"
+│   │   │       │   │       ├── lalrpop-util v0.22.2 (*)
+│   │   │       │   │       └── regex-automata feature "unicode" (*)
+│   │   │       │   └── stfu8 feature "default"
+│   │   │       │       ├── stfu8 v0.2.7
+│   │   │       │       └── stfu8 feature "testing"
+│   │   │       │           └── stfu8 v0.2.7
+│   │   │       │   [build-dependencies]
+│   │   │       │   └── lalrpop v0.22.2
+│   │   │       │       ├── ascii-canvas v4.0.0
+│   │   │       │       │   └── term feature "default"
+│   │   │       │       │       └── term v1.0.2
+│   │   │       │       │           └── home feature "default"
+│   │   │       │       │               └── home v0.5.11
+│   │   │       │       ├── bit-set v0.8.0
+│   │   │       │       │   └── bit-vec v0.8.0
+│   │   │       │       ├── ena v0.14.3 (*)
+│   │   │       │       ├── lalrpop-util v0.22.2
+│   │   │       │       │   └── rustversion feature "default" (*)
+│   │   │       │       ├── petgraph v0.7.1
+│   │   │       │       │   ├── fixedbitset v0.5.7
+│   │   │       │       │   └── indexmap feature "default" (*)
+│   │   │       │       ├── regex-syntax v0.8.5
+│   │   │       │       ├── sha3 v0.10.8
+│   │   │       │       │   ├── digest feature "default"
+│   │   │       │       │   │   ├── digest v0.10.7
+│   │   │       │       │   │   │   ├── subtle v2.6.1
+│   │   │       │       │   │   │   ├── block-buffer feature "default" (*)
+│   │   │       │       │   │   │   └── crypto-common feature "default"
+│   │   │       │       │   │   │       └── crypto-common v0.1.6
+│   │   │       │       │   │   │           ├── generic-array feature "default" (*)
+│   │   │       │       │   │   │           ├── generic-array feature "more_lengths" (*)
+│   │   │       │       │   │   │           └── typenum feature "default" (*)
+│   │   │       │       │   │   └── digest feature "core-api"
+│   │   │       │       │   │       ├── digest v0.10.7 (*)
+│   │   │       │       │   │       └── digest feature "block-buffer"
+│   │   │       │       │   │           └── digest v0.10.7 (*)
+│   │   │       │       │   └── keccak feature "default"
+│   │   │       │       │       └── keccak v0.1.5
+│   │   │       │       │           └── cpufeatures feature "default" (*)
+│   │   │       │       ├── string_cache v0.8.9 (*)
+│   │   │       │       ├── term v1.0.2 (*)
+│   │   │       │       ├── unicode-xid v0.2.6
+│   │   │       │       ├── regex feature "std" (*)
+│   │   │       │       ├── walkdir feature "default" (*)
+│   │   │       │       └── itertools feature "use_std"
+│   │   │       │           ├── itertools v0.14.0
+│   │   │       │           │   └── either v1.15.0
+│   │   │       │           ├── either feature "use_std" (*)
+│   │   │       │           └── itertools feature "use_alloc"
+│   │   │       │               └── itertools v0.14.0 (*)
+│   │   │       ├── sequoia-ipc v0.36.0 (*)
+│   │   │       ├── sequoia-openpgp v2.0.0 (*)
+│   │   │       ├── anyhow feature "default" (*)
+│   │   │       ├── futures feature "default" (*)
+│   │   │       ├── tokio feature "default" (*)
+│   │   │       ├── tokio feature "io-util" (*)
+│   │   │       ├── tokio feature "net" (*)
+│   │   │       ├── tokio feature "rt-multi-thread" (*)
+│   │   │       ├── async-trait feature "default" (*)
+│   │   │       ├── log feature "default" (*)
+│   │   │       └── sequoia-keystore-backend feature "default" (*)
+│   │   └── sequoia-keystore-softkeys feature "default"
+│   │       └── sequoia-keystore-softkeys v0.7.0
+│   │           ├── sequoia-openpgp v2.0.0 (*)
+│   │           ├── anyhow feature "default" (*)
+│   │           ├── futures feature "default" (*)
+│   │           ├── dirs feature "default" (*)
+│   │           ├── async-trait feature "default" (*)
+│   │           ├── log feature "default" (*)
+│   │           └── sequoia-keystore-backend feature "default" (*)
+│   │   [build-dependencies]
+│   │   └── capnpc feature "default" (*)
+│   ├── sequoia-keystore feature "gpg-agent"
+│   │   └── sequoia-keystore v0.7.0 (*)
+│   └── sequoia-keystore feature "softkeys"
+│       └── sequoia-keystore v0.7.0 (*)
+├── sequoia-policy-config feature "default"
+│   └── sequoia-policy-config v0.8.0
+│       ├── sequoia-openpgp v2.0.0 (*)
+│       ├── anyhow feature "default" (*)
+│       ├── serde feature "default" (*)
+│       ├── thiserror feature "default" (*)
+│       ├── chrono feature "default" (*)
+│       └── toml feature "default"
+│           └── toml v0.5.11
+│               └── serde feature "default" (*)
+├── termcolor feature "default"
+│   └── termcolor v1.4.1
+├── textwrap feature "smawk"
+│   └── textwrap v0.16.2
+│       ├── unicode-width feature "default" (*)
+│       └── smawk feature "default"
+│           └── smawk v0.3.2
+├── textwrap feature "unicode-width"
+│   └── textwrap v0.16.2 (*)
+├── toml_edit feature "display"
+│   └── toml_edit v0.22.27
+│       ├── indexmap feature "default" (*)
+│       ├── indexmap feature "std" (*)
+│       ├── toml_datetime feature "default"
+│       │   └── toml_datetime v0.6.11
+│       ├── toml_write feature "default"
+│       │   ├── toml_write v0.1.2
+│       │   └── toml_write feature "std"
+│       │       ├── toml_write v0.1.2
+│       │       └── toml_write feature "alloc"
+│       │           └── toml_write v0.1.2
+│       └── winnow feature "default"
+│           ├── winnow v0.7.11
+│           └── winnow feature "std"
+│               ├── winnow v0.7.11
+│               └── winnow feature "alloc"
+│                   └── winnow v0.7.11
+└── toml_edit feature "parse"
+    └── toml_edit v0.22.27 (*)
+[build-dependencies]
+├── clap_lex v0.7.5
+├── sequoia-net v0.30.0 (*)
+├── cfg-if feature "default" (*)
+├── anyhow feature "default" (*)
+├── typenum feature "default" (*)
+├── clap feature "default" (*)
+├── clap feature "derive" (*)
+├── clap feature "env" (*)
+├── clap feature "string" (*)
+├── clap feature "wrap_help" (*)
+├── terminal_size feature "default" (*)
+├── dirs feature "default" (*)
+├── buffered-reader feature "compression" (*)
+├── chrono feature "default" (*)
+├── clap_complete feature "default"
+│   └── clap_complete v4.5.54
+│       └── clap feature "std" (*)
+├── roff feature "default"
+│   └── roff v0.2.2
+├── sequoia-directories feature "default" (*)
+├── sequoia-man feature "default"
+│   └── sequoia-man v0.3.2
+│       ├── anyhow feature "default" (*)
+│       ├── clap feature "default" (*)
+│       ├── clap feature "derive" (*)
+│       ├── clap feature "env" (*)
+│       └── roff feature "default" (*)
+├── serde feature "default" (*)
+├── serde feature "derive"
+│   ├── serde v1.0.219 (*)
+│   └── serde feature "serde_derive"
+│       └── serde v1.0.219 (*)
+└── textwrap feature "default"
+    ├── textwrap v0.16.2
+    │   ├── unicode-width feature "default" (*)
+    │   ├── smawk feature "default" (*)
+    │   └── unicode-linebreak feature "default"
+    │       └── unicode-linebreak v0.1.5
+    ├── textwrap feature "smawk"
+    │   └── textwrap v0.16.2 (*)
+    ├── textwrap feature "unicode-linebreak"
+    │   └── textwrap v0.16.2 (*)
+    └── textwrap feature "unicode-width"
+        └── textwrap v0.16.2 (*)
+[dev-dependencies]
+├── libc feature "default" (*)
+├── regex feature "default" (*)
+├── assert_cmd feature "default"
+│   └── assert_cmd v2.0.17
+│       ├── anstyle feature "default" (*)
+│       ├── bstr feature "default"
+│       │   ├── bstr v1.12.0
+│       │   │   ├── memchr v2.7.5
+│       │   │   └── regex-automata feature "dfa-search"
+│       │   │       └── regex-automata v0.4.9 (*)
+│       │   ├── bstr feature "std"
+│       │   │   ├── bstr v1.12.0 (*)
+│       │   │   ├── memchr feature "std" (*)
+│       │   │   └── bstr feature "alloc"
+│       │   │       ├── bstr v1.12.0 (*)
+│       │   │       └── memchr feature "alloc" (*)
+│       │   └── bstr feature "unicode"
+│       │       └── bstr v1.12.0 (*)
+│       ├── doc-comment feature "default"
+│       │   └── doc-comment v0.3.3
+│       ├── predicates feature "diff"
+│       │   └── predicates v3.1.3
+│       │       ├── anstyle feature "default" (*)
+│       │       ├── regex feature "default" (*)
+│       │       ├── difflib feature "default"
+│       │       │   └── difflib v0.4.0
+│       │       ├── float-cmp feature "default"
+│       │       │   ├── float-cmp v0.10.0
+│       │       │   │   └── num-traits v0.2.19 (*)
+│       │       │   └── float-cmp feature "ratio"
+│       │       │       ├── float-cmp v0.10.0 (*)
+│       │       │       └── float-cmp feature "num-traits"
+│       │       │           └── float-cmp v0.10.0 (*)
+│       │       ├── normalize-line-endings feature "default"
+│       │       │   └── normalize-line-endings v0.3.0
+│       │       └── predicates-core feature "default"
+│       │           └── predicates-core v1.0.9
+│       ├── predicates-core feature "default" (*)
+│       ├── predicates-tree feature "default"
+│       │   └── predicates-tree v1.0.12
+│       │       ├── predicates-core feature "default" (*)
+│       │       └── termtree feature "default"
+│       │           └── termtree v0.5.1
+│       └── wait-timeout feature "default"
+│           └── wait-timeout v0.2.1
+│               └── libc feature "default" (*)
+└── predicates feature "default"
+    ├── predicates v3.1.3 (*)
+    ├── predicates feature "color"
+    │   └── predicates v3.1.3 (*)
+    ├── predicates feature "diff" (*)
+    ├── predicates feature "float-cmp"
+    │   └── predicates v3.1.3 (*)
+    ├── predicates feature "normalize-line-endings"
+    │   └── predicates v3.1.3 (*)
+    └── predicates feature "regex"
+        └── predicates v3.1.3 (*)

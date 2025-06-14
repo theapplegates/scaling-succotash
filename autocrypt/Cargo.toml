@@ -22,7 +22,7 @@ gitlab = { repository = "sequoia-pgp/sequoia" }
 maintenance = { status = "actively-developed" }
 
 [dependencies]
-sequoia-openpgp = { path = "../openpgp", version = "2", default-features = false, features = ["crypto-openssl"] }
+sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
 base64 = ">= 0.21, < 0.23"
 
 [lib]
@@ -36,4 +36,4 @@ bench = false
 
 # Enables a crypto backend for the docs.rs generation:
 [package.metadata.docs.rs]
-features = ["sequoia-openpgp/default"]
+# sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, # features = ["crypto-openssl"] }

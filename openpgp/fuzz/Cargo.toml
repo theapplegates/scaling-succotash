@@ -1,5 +1,5 @@
 [package]
-name = "sequoia-openpgp-fuzz"
+sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
 version = "0.0.0"
 publish = false
 edition = "2021"
@@ -8,10 +8,12 @@ edition = "2021"
 cargo-fuzz = true
 
 [dependencies]
+sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
+sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
 anyhow = "1"
 libfuzzer-sys = "0.4"
 
-[dependencies.sequoia-openpgp]
+sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
 path = ".."
 default-features = false
 

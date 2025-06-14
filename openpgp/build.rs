@@ -55,72 +55,23 @@ fn include_test_data() -> io::Result<()> {
 }
 
 fn crypto_backends_sanity_check() {
-    #[allow(dead_code)]
-    struct Backend {
-        name: &'static str,
-        production_ready: bool,
-        constant_time: bool,
-    }
+#[allow(dead_code)]
+struct Backend {
+    name: &'static str,
+    production_ready: bool,
+    constant_time: bool,
+}
 
-    let backends = vec![
-        (cfg!(all(feature = "crypto-openssl",
-                  not(all(feature = "__implicit-crypto-backend-for-tests",
-                          any(feature = "crypto-openssl",
-                              feature = "crypto-openssl",
-                              feature = "crypto-openssl",
-                              feature = "crypto-fuzzing",
-                              feature = "crypto-openssl"))))),
-         Backend {
-             name: "Nettle",
-             production_ready: true,
-             constant_time: true,
-         }),
-        (cfg!(all(feature = "crypto-openssl",
-                  not(all(feature = "__implicit-crypto-backend-for-tests",
-                          any(feature = "crypto-openssl",
-                              feature = "crypto-openssl",
-                              feature = "crypto-openssl",
-                              feature = "crypto-openssl",
-                              feature = "crypto-fuzzing",
-                              feature = "crypto-openssl"))))),
-         Backend {
-             name: "Windows CNG",
-             production_ready: true,
-             constant_time: true,
-         }),
-        (cfg!(feature = "crypto-openssl"),
-         Backend {
-             name: "RustCrypto",
-             production_ready: false,
-             constant_time: false,
-         }),
-        (cfg!(feature = "crypto-openssl"),
-         Backend {
-             name: "OpenSSL",
-             production_ready: true,
-             constant_time: true,
-         }),
-        (cfg!(feature = "crypto-openssl"),
-         Backend {
-             name: "Botan",
-             production_ready: true,
-             constant_time: true,
-         }),
-        (cfg!(feature = "crypto-openssl"),
-         Backend {
-             name: "Botan",
-             production_ready: true,
-             constant_time: true,
-         }),
-        (cfg!(feature = "crypto-fuzzing"),
-         Backend {
-             name: "Fuzzing",
-             production_ready: false,
-             constant_time: false,
-         }),
-    ].into_iter().filter_map(|(selected, backend)| {
-        if selected { Some(backend) } else { None }
-    }).collect::<Vec<_>>();
+let backends = vec![
+    (cfg!(feature = "crypto-openssl"),
+     Backend {
+         name: "OpenSSL",
+         production_ready: true,
+         constant_time: true,
+     }),
+].into_iter().filter_map(|(selected, backend)| {
+    if selected { Some(backend) } else { None }
+}).collect::<Vec<_>>();
 
     match backends.len() {
         0 => {
