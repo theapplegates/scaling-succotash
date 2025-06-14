@@ -613,6 +613,62 @@ impl Asymmetric for super::Backend {
         ctx.verify_init()?;
         Ok(ctx.verify(&digest, &signature.to_der()?)?)
     }
+
+    // Legacy functions - needed for compatibility but not post-quantum
+    fn elgamal_generate_key(_p_bits: usize) -> Result<(MPI, MPI, MPI, ProtectedMPI)> {
+        Err(Error::UnsupportedPublicKeyAlgorithm(
+            PublicKeyAlgorithm::ElGamalEncrypt).into())
+    }
+
+    fn x25519_clamp_secret(_secret: &mut [u8]) {
+        // No-op for post-quantum focus
+    }
+}
+
+/// Generates a new ECC key over `curve`.
+///
+/// If `for_signing` is false a ECDH key, if it's true either a
+/// EdDSA or ECDSA key is generated.  Giving `for_signing == true` and
+/// `curve == Cv25519` will produce an error. Likewise
+/// `for_signing == false` and `curve == Ed25519` will produce an error.
+pub(crate) fn generate_ecc_backend(for_signing: bool, curve: Curve)
+                                   -> Result<(PublicKeyAlgorithm,
+                                              mpi::PublicKey,
+                                              mpi::SecretKeyMaterial)>
+{
+    let nid = (&curve).try_into()?;
+    let group = EcGroup::from_curve_name(nid)?;
+    let key = EcKey::generate(&group)?;
+
+    let hash = crate::crypto::ecdh::default_ecdh_kdf_hash(&curve);
+    let sym = crate::crypto::ecdh::default_ecdh_kek_cipher(&curve);
+    let mut ctx = BigNumContext::new()?;
+
+    let q = MPI::new(&key.public_key().to_bytes(
+        &group,
+        PointConversionForm::UNCOMPRESSED,
+        &mut ctx,
+    )?);
+    let scalar = key.private_key().to_vec().into();
+
+    if for_signing {
+        Ok((
+            PublicKeyAlgorithm::ECDSA,
+            mpi::PublicKey::ECDSA { curve, q },
+            mpi::SecretKeyMaterial::ECDSA { scalar },
+        ))
+    } else {
+        Ok((
+            PublicKeyAlgorithm::ECDH,
+            mpi::PublicKey::ECDH {
+                curve,
+                q,
+                hash,
+                sym,
+            },
+            mpi::SecretKeyMaterial::ECDH { scalar },
+        ))
+    }
 }
 
 impl TryFrom<&ProtectedMPI> for BigNum {
@@ -1039,6 +1095,7 @@ where
             ))
         }
     }
+
 }
 
 /// Given the secret prime values `p` and `q`, returns the pair of

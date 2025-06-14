@@ -66,7 +66,7 @@ criterion = { version = "0.5", features = ["html_reports"] }
 
 [features]
 default = ["crypto-openssl"]
-crypto-openssl = []
+crypto-openssl = ["dep:openssl", "dep:openssl-sys"]
 compression-deflate = ["dep:flate2"]
 compression-bzip2 = ["dep:bzip2"]
 compression = ["compression-deflate", "compression-bzip2"]
