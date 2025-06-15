@@ -1,11 +1,12 @@
 [workspace]
+resolver = "2"
 members = [
-    "openpgp",
     "autocrypt",
     "buffered-reader",
     "ipc",
     "net",
-    "sequoia-sq",  # ← make sure this line is present
+    "openpgp",
+    "sequoia-sq",
 ]
 
 [profile.release]

@@ -22,6 +22,7 @@ maintenance = { status = "actively-developed" }
 
 [dependencies]
 sequoia-openpgp = { path = "../openpgp", version = "2.0.0", default-features = false, features = ["crypto-openssl"] }
+
 anyhow = "1.0.18"
 capnp-rpc = "0.19"
 fs2 = "0.4.2"
