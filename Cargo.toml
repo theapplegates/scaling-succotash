@@ -5,7 +5,7 @@ members = [
     "buffered-reader",
     "ipc",
     "net",
-    "sequoia-sq",  # ← make sure this line is present
+    "sequoia-sq",
 ]
 
 [profile.release]

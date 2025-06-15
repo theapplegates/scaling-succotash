@@ -1,0 +1,43 @@
+diff --git a/openpgp/src/packet/public_key.rs b/openpgp/src/packet/public_key.rs
+index e3a1b2c..f7d4a9e 100644
+--- a/openpgp/src/packet/public_key.rs
++++ b/openpgp/src/packet/public_key.rs
+@@ -50,6 +50,10 @@ pub enum PublicKeyAlgorithm {
+     RsaEncryptSign = 1,
+     RsaSignOnly    = 2,
+     ElGamalEncrypt = 16,
++    /// Post-quantum KEM via Kyber-1024
++    Kyber1024      = 0xFE01,
++    /// Post-quantum signature via Dilithium-5
++    Dilithium5     = 0xFE02,
+     Ecdh           = 18,
+     Ecdsa          = 19,
+     EdDSA          = 22,
+diff --git a/openpgp/src/crypto/backend/openssl/asymmetric.rs b/openpgp/src/crypto/backend/openssl/asymmetric.rs
+index a7c2d10..b5e4f3a 100644
+--- a/openpgp/src/crypto/backend/openssl/asymmetric.rs
++++ b/openpgp/src/crypto/backend/openssl/asymmetric.rs
+@@ match alg {
+     PublicKeyAlgorithm::EdDSA => {
+         ctx = PtrGuard(EVP_PKEY_CTX_new_id(EVP_PKEY_ED25519, ptr::null_mut()));
+         // …
+     }
++    PublicKeyAlgorithm::Kyber1024 => {
++        // Look up the provider‐registered NID for Kyber-1024
++        let nid = unsafe {
++            openssl_sys::OBJ_txt2nid(b"KYBER_1024\0".as_ptr() as *const _)
++        };
++        let mut ctx = PtrGuard(EVP_PKEY_CTX_new_id(nid, ptr::null_mut()));
++        // Then call keygen + encapsulate on ctx
++    }
++
++    PublicKeyAlgorithm::Dilithium5 => {
++        // Look up the provider‐registered NID for Dilithium-5
++        let nid = unsafe {
++            openssl_sys::OBJ_txt2nid(b"DILITHIUM_5\0".as_ptr() as *const _)
++        };
++        let mut ctx = PtrGuard(EVP_PKEY_CTX_new_id(nid, ptr::null_mut()));
++        // Then call sign + verify on ctx
++    }
+     _ => unimplemented!("algorithm not supported"),
+}

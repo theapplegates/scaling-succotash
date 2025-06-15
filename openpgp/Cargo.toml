@@ -1,14 +1,16 @@
+# openpgp/Cargo.toml
+
 [package]
 name = "sequoia-openpgp"
 description = "OpenPGP data types and associated machinery"
 version = "2.0.0"
 authors = [
-  "Igor Matuszewski <igor@sequoia-pgp.org>",
-  "Justus Winter <justus@sequoia-pgp.org>",
-  "Kai Michaelis <kai@sequoia-pgp.org>",
-  "Neal H. Walfield <neal@sequoia-pgp.org>",
-  "Nora Widdecke <nora@sequoia-pgp.org>",
-  "Wiktor Kwapisiewicz <wiktor@sequoia-pgp.org>",
+    "Igor Matuszewski <igor@sequoia-pgp.org>",
+    "Justus Winter <justus@sequoia-pgp.org>",
+    "Kai Michaelis <kai@sequoia-pgp.org>",
+    "Neal H. Walfield <neal@sequoia-pgp.org>",
+    "Nora Widdecke <nora@sequoia-pgp.org>",
+    "Wiktor Kwapisiewicz <wiktor@sequoia-pgp.org>",
 ]
 build = "build.rs"
 documentation = "https://docs.rs/sequoia-openpgp"
@@ -23,37 +25,38 @@ edition = "2021"
 rust-version = "1.79"
 
 [badges]
-gitlab = { repository = "sequoia-pgp/sequoia" }
-maintenance = { status = "actively-developed" }
+gitlab       = { repository = "sequoia-pgp/sequoia" }
+maintenance  = { status    = "actively-developed" }
 
 [dependencies]
-anyhow                     = "1.0.18"
-argon2                     = "0.5"
-buffered-reader            = { path = "../buffered-reader", version = "1.3.0", default-features = false }
-base64                     = ">= 0.21, < 0.23"
-bzip2                      = { version = ">= 0.4, < 0.6", optional = true }
-dyn-clone                  = "1"
-flate2                     = { version = "1.0.1", optional = true }
-idna                       = ">= 1.0.3, < 2"
-lalrpop-util               = "0.20"
-libc                       = "0.2.66"
-memsec                     = { version = ">=0.5, <0.8", default-features = false }
-regex                      = "1"
-regex-syntax               = "0.8"
-sha1collisiondetection     = { version = "0.3.1", default-features = false, features = ["std"] }
-thiserror                  = ">=1, <3"
-xxhash-rust                = { version = "0.8", features = ["xxh3"] }
-openssl                    = { version = "0.10.55", optional = true }
-openssl-sys                = { version = "0.9.90", optional = true }
-# … plus your other RustCrypto‐style optional deps (aes, rsa, x25519-dalek, etc.) …
+anyhow                       = "1.0.18"
+argon2                       = "0.5"
+buffered-reader              = { path = "../buffered-reader", version = "1.3.0", default-features = false }
+base64                       = ">= 0.21, < 0.23"
+bzip2                        = { version = ">= 0.4, < 0.6", optional = true }
+dyn-clone                    = "1"
+flate2                       = { version = "1.0.1", optional = true }
+idna                         = ">= 1.0.3, < 2"
+lalrpop-util                 = "0.20"
+libc                         = "0.2.66"
+memsec                       = { version = ">=0.5, <0.8", default-features = false }
+regex                        = "1"
+regex-syntax                 = "0.8"
+sha1collisiondetection       = { version = "0.3.1", default-features = false, features = ["std"] }
+thiserror                    = ">=1, <3"
+xxhash-rust                  = { version = "0.8", features = ["xxh3"] }
+
+# Only OpenSSL backend:
+openssl                      = { version = "0.10.55", optional = true }
+openssl-sys                  = { version = "0.9.90",  optional = true }
 
 [target.'cfg(windows)'.dependencies]
 win-crypto-ng = { version = "0.5.1", features = ["rand", "block-cipher"], optional = true }
 winapi        = { version = "0.3.8", default-features = false, features = ["bcrypt"], optional = true }
 
 [target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
-chrono     = { version = "0.4.10", default-features = false, features = ["std", "wasmbind", "clock"] }
-getrandom  = { version = "0.2", features = ["js"] }
+chrono       = { version = "0.4.10", default-features = false, features = ["std", "wasmbind", "clock"] }
+getrandom    = { version = "0.2",           features = ["js"] }
 
 [build-dependencies]
 lalrpop = { version = "0.20", default-features = false }
@@ -65,26 +68,42 @@ rpassword  = "7.0"
 criterion  = { version = "0.5", features = ["html_reports"] }
 
 [features]
-default                           = ["crypto-openssl"]
-crypto-openssl                    = ["openssl", "openssl-sys"]
-compression-deflate               = ["dep:flate2"]
-compression-bzip2                 = ["dep:bzip2"]
-compression                       = ["compression-deflate", "compression-bzip2"]
+default                            = ["crypto-openssl"]
+crypto-openssl                     = ["openssl", "openssl-sys"]
+
+# Compression options:
+# compression-deflate                = ["dep:flate2"]
+# compression-bzip2                  = ["dep:bzip2"]
+compression-deflate                = ["flate2"]
+compression-bzip2                  = ["bzip2"]
+
+compression                        = ["compression-deflate","compression-bzip2"]
+
+# Internal/testing flags:
 __implicit-crypto-backend-for-tests = []
-allow-experimental-crypto         = []
-allow-variable-time-crypto        = []
+allow-experimental-crypto          = []
+allow-variable-time-crypto         = []
 
 [lib]
 bench = false
 
 [[example]]
-name = "pad"
-required-features = ["compression-deflate"]
+name               = "pad"
+required-features  = ["compression-deflate"]
 
 [[bench]]
-name = "run_benchmarks"
+name    = "run_benchmarks"
 harness = false
 
 [[example]]
 name = "secret-leak-detector"
 path = "tests/secret-leak-detector/detector.rs"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = [
+    'cfg(osslconf, values("OPENSSL_NO_BF"))',
+    'cfg(osslconf, values("OPENSSL_NO_CAMELLIA"))',
+    'cfg(osslconf, values("OPENSSL_NO_CAST"))',
+    'cfg(osslconf, values("OPENSSL_NO_IDEA"))',
+    'cfg(osslconf, values("OPENSSL_NO_OCB"))',
+] }
